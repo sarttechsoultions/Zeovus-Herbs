@@ -1994,8 +1994,9 @@ h1, h2, h3, h4, h5, h6,
     .site-header__nav .site-header__voices { display: none; }
     .site-header__nav a { height: 38px; font-size: 10px; }
     .site-header__nav .site-header__contact { min-width: auto; padding: 0 1rem; }
-    .hero { height: clamp(340px, 60svh, 420px); border-radius: 0 0 0 45px; }
-    .hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); margin-bottom: 2rem; }
+    .hero { height: clamp(440px, 70svh, 520px); border-radius: 0 0 0 45px; }
+    .hero-copy { padding-top: 60px !important; }
+    .hero h1 { font-size: clamp(2.6rem, 11vw, 3.8rem); margin-top: 15px; margin-bottom: 1.8rem; }
     .purpose { margin-top: 1.75rem !important; }
     .purpose-image, .advantage-photo { height: 48svh !important; min-height: 300px; }
     .purpose-copy, .adv-copy { padding: 2.5rem 1.5rem !important; }
