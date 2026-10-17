@@ -1,0 +1,3 @@
+"use client";
+import {useState} from "react";
+export default function SettingsPage(){const [notice,setNotice]=useState("");return <section className="admin-surface admin-settings"><h2>Workspace settings</h2><p>Settings are shown as a preview and are not saved to a server.</p><form onSubmit={e=>{e.preventDefault();setNotice('This is a preview. Settings will be saved once the backend is connected.')}}><label>Workspace name<input defaultValue="Zeovus Herbs" required/></label><label>Brand tagline<input defaultValue="Plants with purpose" required/></label><button className="admin-primary">Save settings →</button></form>{notice&&<p role="status">{notice}</p>}</section>}

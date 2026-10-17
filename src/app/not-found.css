@@ -1,0 +1,221 @@
+/* ══════════════════════════════════════════════
+   404 Not Found — Zeovus Herbs theme
+   ══════════════════════════════════════════════ */
+
+.notfound-page {
+  width: 100%;
+  max-width: none;
+}
+
+/* ── Hero Section ──────────────────────────── */
+.notfound-hero {
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff5ef;
+  border-radius: 0 0 0 clamp(80px, 8.5vw, 140px);
+}
+
+/* Botanical background image */
+.notfound-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.notfound-bg__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.18;
+}
+
+.notfound-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    #fff5ef 0%,
+    rgba(255, 245, 239, 0.55) 50%,
+    rgba(255, 245, 239, 0.85) 100%
+  );
+}
+
+/* ── Content ────────────────────────────────── */
+.notfound-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 80px 40px;
+  max-width: 680px;
+  animation: notfound-fadein 800ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+@keyframes notfound-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Eyebrow label */
+.notfound-eyebrow {
+  margin: 0 0 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #38623e;
+}
+
+/* Giant 404 numeral */
+.notfound-code {
+  margin: 0 0 20px;
+  font-family: "dharma-gothic-e", sans-serif;
+  font-size: clamp(7rem, 18vw, 15rem);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  color: #4d2e1d;
+  /* subtle warm texture via text-shadow */
+  text-shadow:
+    4px 6px 0 rgba(90, 40, 10, 0.08),
+    0 0 60px rgba(90, 40, 10, 0.06);
+}
+
+/* Description */
+.notfound-message {
+  margin: 0 0 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.65;
+  color: #55473f;
+}
+
+/* ── CTA Buttons ────────────────────────────── */
+.notfound-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notfound-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 32px;
+  border-radius: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.notfound-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(77, 46, 29, 0.18);
+}
+
+.notfound-btn--primary {
+  background: #5c3824;
+  border: 1px solid #5c3824;
+  color: #fff;
+}
+
+.notfound-btn--primary:hover {
+  background: #4d2e1d;
+  border-color: #4d2e1d;
+}
+
+.notfound-btn--outline {
+  background: transparent;
+  border: 1px solid #5c3824;
+  color: #5c3824;
+}
+
+.notfound-btn--outline:hover {
+  background: rgba(92, 56, 36, 0.07);
+}
+
+/* ── Decorative leaf SVG ────────────────────── */
+.notfound-leaf {
+  position: absolute;
+  right: -60px;
+  bottom: -40px;
+  width: clamp(200px, 30vw, 420px);
+  height: auto;
+  color: #5c3824;
+  pointer-events: none;
+  z-index: 0;
+  animation: notfound-leaf-float 7s ease-in-out infinite alternate;
+}
+
+@keyframes notfound-leaf-float {
+  from { transform: translateY(0) rotate(-2deg); }
+  to   { transform: translateY(-18px) rotate(2deg); }
+}
+
+/* ── Mobile ─────────────────────────────────── */
+@media (max-width: 760px) {
+  .notfound-hero {
+    min-height: 80svh;
+    border-radius: 0 0 0 60px;
+  }
+
+  .notfound-content {
+    padding: 60px 28px;
+  }
+
+  .notfound-code {
+    font-size: clamp(6rem, 26vw, 9rem);
+  }
+
+  .notfound-message {
+    font-size: 15px;
+  }
+
+  .notfound-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .notfound-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .notfound-leaf {
+    right: -80px;
+    bottom: -20px;
+    width: 220px;
+    opacity: 0.6;
+  }
+}
+
+/* ── Reduced motion ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .notfound-content {
+    animation: none;
+  }
+  .notfound-leaf {
+    animation: none;
+  }
+  .notfound-btn {
+    transition: none;
+  }
+}

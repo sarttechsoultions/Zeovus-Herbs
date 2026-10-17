@@ -1,0 +1,23 @@
+import {SiteImage} from "../../components/SiteImage";
+import { SiteHeader } from "../../components/SiteHeader";
+import ContactForm from "./ContactForm";
+import { HomeFooter } from "../../components/home/HomeFooter";
+import { PageScrollReveal } from "../../components/PageScrollReveal";
+import "./contact.css";
+export const metadata={title:"Contact Us | Zeovus Herbs",description:"Connect with Zeovus Herbs for botanical ingredients, market representation and partnerships."};
+const assets="/contact-assets/";
+const support=[["Market Representation","Building a local presence for your ingredient."],["Distribution","Connecting your ingredient with relevant customers and channels."],["Business Development","Identifying manufacturers, brands and formulation opportunities."],["Application Understanding","Exploring where your ingredient can fit across supplements, food, beauty, pet health and related categories."],["Market Access","Helping translate global ingredient innovation into commercially relevant opportunities across India and Asia."]];
+const offices=[
+  {country:"India",person:"Kushagra Didwania",phone:"+91 9721062811",email:"info@zeovuslife.com",address:"Unit No. 419, 4th Floor, Master Mind V, Royal Palms Estate, Aarey Milk Colony, Goregaon (East), Mumbai – 400065",image:"ind.jpeg"},
+  {country:"USA",person:"Vishal Mehta",phone:"+1 856-313-7067",address:"11634 Ecclesia Drive, Tampa, Florida 33626, USA",image:"usa.jpeg"},
+  {country:"Qatar",person:"Karishma Desai",phone:"+974 3374 3896",address:"West Bay, Doha, Qatar",image:"qtar.jpeg"}
+];
+export default function ContactPage(){return <main className="contact-page"><SiteHeader/><PageScrollReveal className="contact-content">
+<section className="contact-hero"><SiteImage className="contact-hero-base" src={assets+"imgIstockphoto21561747381024X10241.png"} alt=""/><SiteImage className="contact-hero-photo" src={assets+"imgPremiumPhoto1733259933803Fe5Fc98B88F41.png"} alt="Partners shaking hands in a field at sunset"/><h1>Connect With Us</h1></section>
+<section className="contact-direction contact-outward"><SiteImage src={assets+"imgPexelsThomasParker1272388137242469261.png"} alt="Container ship connecting global markets"/><div><h2>From India to the World</h2><p>We connect Indian botanical, nutritional and specialty ingredients with global manufacturers, formulators and brands, providing expertise in ingredient specifications, scientific insights and potential applications beyond supply.</p></div></section>
+<section className="contact-direction contact-inward"><SiteImage src={assets+"imgPexelsThomasParker1272388137242469261.png"} alt="International shipping and trade"/><div><h2>From the World to India</h2><p>We help global ingredient companies navigate the Indian market through local expertise, strategic relationships and market opportunities, connecting scientifically and clinically supported ingredients with manufacturers, formulators and brands.</p></div></section>
+<section className="contact-conversation" id="contact-form"><div className="contact-conversation-copy"><div className="contact-conversation-highlight"><span>Start a Conversation</span><h2>One Partner.<br/>Two Directions.</h2></div><h3>India to the World. World to India.</h3><p>Tell us what you are looking for and our team will get back to you.</p></div><ContactForm/></section>
+<section className="contact-support"><div className="contact-support-photo"><SiteImage src={assets+"imgPexelsShvetsa52309631.png"} alt="Botanical specialists examining plants in a greenhouse"/></div><div><h2>How We Can Support You</h2>{support.map(([title,copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
+<section className="contact-offices" aria-labelledby="contact-offices-title"><header><p>Connect with our teams across global markets</p><h2 id="contact-offices-title">One Partner. Global Reach.</h2></header><div className="contact-office-grid">{offices.map(office=><article className="contact-office-card" key={office.country}><SiteImage src={assets+office.image} alt=""/><div className="contact-office-shade"/><div className="contact-office-content"><h3>{office.country}</h3><div className="contact-office-rule"/><dl><div><dt>Contact person</dt><dd>{office.person}</dd></div><div><dt>Phone</dt><dd><a href={`tel:${office.phone.replace(/[^+\d]/g,"")}`}>{office.phone}</a></dd></div>{office.email&&<div className="contact-office-wide"><dt>Email</dt><dd><a href={`mailto:${office.email}`}>{office.email}</a></dd></div>}<div className="contact-office-wide"><dt>Address</dt><dd>{office.address}</dd></div></dl></div></article>)}</div></section>
+</PageScrollReveal><HomeFooter /></main>}
+
