@@ -5,42 +5,26 @@
 .home-scroll-reveal{margin-top:3.8vw;overflow-x:clip}
 .home-reveal-item{position:relative}
 .home-page .home-reveal-item>section{width:100%!important;max-width:none!important;left:auto!important;transform:none!important;margin-inline:0!important;margin-top:0!important}
-.home-scroll-reveal.reveal-ready .home-reveal-item{transition:opacity 750ms ease,transform 850ms cubic-bezier(.2,.75,.25,1)}
-.home-scroll-reveal.reveal-ready .home-reveal-item:not(.is-visible){opacity:0;transform:translateX(-70px)}
-.home-scroll-reveal.reveal-ready .home-reveal-item:nth-child(even):not(.is-visible){transform:translateX(70px)}
-.home-scroll-reveal .home-reveal-item.is-visible{opacity:1;transform:none}
-@media(max-width:760px){.home-scroll-reveal{margin-top:30px}.home-scroll-reveal.reveal-ready .home-reveal-item:not(.is-visible){transform:translateX(-28px)}.home-scroll-reveal.reveal-ready .home-reveal-item:nth-child(even):not(.is-visible){transform:translateX(28px)}}
+.home-scroll-reveal.reveal-ready .home-reveal-item{transition:opacity 750ms ease}
+.home-scroll-reveal.reveal-ready .home-reveal-item:not(.is-visible){opacity:0}
+.home-scroll-reveal .home-reveal-item.is-visible{opacity:1}
+@media(max-width:760px){.home-scroll-reveal{margin-top:30px}}
 @media(prefers-reduced-motion:reduce){.home-scroll-reveal.reveal-ready .home-reveal-item{opacity:1!important;transform:none!important;transition:none!important}}
 
-/* ── Purpose Section: image slides from left, copy slides from right ── */
-/* Cancel the parent wrapper's own X-slide for this section so children own the motion */
-.home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose):not(.is-visible){transform:none}
-
-/* Initial hidden state for the two children */
+/* Purpose section fades in without horizontal movement. */
 .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-image{
   opacity:0;
-  transform:translateX(-80px);
-  transition:opacity 750ms ease,transform 900ms cubic-bezier(.2,.75,.25,1);
+  transition:opacity 750ms ease;
 }
 .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-copy{
   opacity:0;
-  transform:translateX(80px);
-  transition:opacity 750ms ease 120ms,transform 900ms cubic-bezier(.2,.75,.25,1) 120ms;
+  transition:opacity 750ms ease 120ms;
 }
 
 /* Reveal state — snap into place */
 .home-scroll-reveal.reveal-ready .home-reveal-item.is-visible .purpose-image,
 .home-scroll-reveal.reveal-ready .home-reveal-item.is-visible .purpose-copy{
   opacity:1;
-  transform:none;
-}
-
-/* Mobile: slide from top/bottom instead of left/right (layout stacks) */
-@media(max-width:760px){
-  .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-image{transform:translateY(20px)}
-  .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-copy{transform:translateY(40px)}
-  .home-scroll-reveal.reveal-ready .home-reveal-item.is-visible:has(.purpose) .purpose-image,
-  .home-scroll-reveal.reveal-ready .home-reveal-item.is-visible:has(.purpose) .purpose-copy{transform:none}
 }
 
 /* Respect reduced-motion */
@@ -117,4 +101,21 @@
     mix-blend-mode:normal;
     object-position:center;
   }
+}
+
+@media (min-width: 761px) {
+  /* Keep the original stagger at the top, while lining up all card bottoms. */
+  .home-page .built-cards-row { margin-top: 4.3vw; }
+}
+
+@media (max-width: 760px) {
+  .home-page .built-header { align-items: flex-start; }
+  .home-page .built-header .built-button { width: 100%; max-width: 320px; }
+}
+
+/* Keep the ingredient CTA directly below its heading. */
+.home-page .built-header .built-button { margin: 1vw 0 0; }
+
+@media (max-width: 760px) {
+  .home-page .built-header .built-button { margin-top: 18px; }
 }

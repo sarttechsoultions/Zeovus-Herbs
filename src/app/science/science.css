@@ -36,3 +36,21 @@
     .science-clinical-checks { margin-top: 25px; padding-right: 0; }
 }
 
+/* Single-open accordions with a gentle height transition. */
+.science-accordion { margin-top: 2.5vw; padding-right: 1.4vw; }
+.science-accordion article { margin: 8px 0; padding: 8px 17px; background: #fff5ef; }
+.science-accordion button { width: 100%; border: 0; padding: 0; background: transparent; display: flex; align-items: center; justify-content: space-between; cursor: pointer; text-align: left; font-size: clamp(13px,1.12vw,20px); font-weight: bold; }
+.science-accordion button img { transform: rotate(45deg); transition: transform 480ms cubic-bezier(.2,.75,.25,1); }
+.science-accordion article.is-open button img { transform: none; }
+.science-accordion__copy { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 480ms cubic-bezier(.2,.75,.25,1); }
+.science-accordion__copy p { min-height: 0; overflow: hidden; margin: 0; padding: 0; opacity: 0; transform: translateY(-6px); transition: padding 480ms cubic-bezier(.2,.75,.25,1), opacity 280ms ease, transform 480ms cubic-bezier(.2,.75,.25,1); }
+.science-accordion article.is-open .science-accordion__copy { grid-template-rows: 1fr; }
+.science-accordion article.is-open .science-accordion__copy p { margin-top: 8px; opacity: 1; transform: translateY(0); }
+.science-accordion.science-clinical-checks article { background: #fff; box-shadow: 0 1px 0 rgba(77, 46, 29, .05); }
+.science-accordion.science-clinical-checks button { font-family: Arial, Helvetica, sans-serif; }
+.science-accordion.science-clinical-checks .science-accordion__copy p { font-size: clamp(14px, 1.12vw, 20px); }
+
+@media (max-width:760px) {
+    .science-accordion { padding-right: 0; margin-top: 25px; }
+}
+

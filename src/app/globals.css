@@ -9,18 +9,11 @@
 /* Shared scroll reveals for the public pages. Content stays visible until JS is ready. */
 .page-scroll-reveal.reveal-ready > section {
     opacity: 0;
-    transform: translateX(-44px);
-    transition: opacity 650ms ease, transform 750ms cubic-bezier(.2,.75,.25,1);
-    will-change: opacity, transform;
+    transition: opacity 650ms ease;
+    will-change: opacity;
 }
 
-.page-scroll-reveal.reveal-ready > section:nth-child(even) { transform: translateX(44px); }
-.page-scroll-reveal.reveal-ready > section.is-visible { opacity: 1; transform: none; }
-
-@media (max-width: 760px) {
-    .page-scroll-reveal.reveal-ready > section { transform: translateY(28px); }
-    .page-scroll-reveal.reveal-ready > section:nth-child(even) { transform: translateY(28px); }
-}
+.page-scroll-reveal.reveal-ready > section.is-visible { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
     .page-scroll-reveal.reveal-ready > section {
@@ -169,7 +162,8 @@
     gap: 15px
 }
 
-.site-header__nav a {
+.site-header__nav a,
+.site-header__nav .site-header__voices {
     display: flex;
     height: 29px;
     align-items: center;
@@ -180,8 +174,10 @@
 }
 
 .site-header__nav .site-header__voices {
-    font-weight: 400;
-    padding-right: 16px
+    font-weight: 600;
+    padding-right: 16px;
+    cursor: default;
+    user-select: none;
 }
 
 .site-header__nav .site-header__contact {
@@ -201,6 +197,34 @@
 .site-header__contact b {
     font-size: 15px
 }
+
+/* The current page is marked with the brand green and a compact underline. */
+.site-header__nav a.is-active:not(.site-header__contact) {
+    position: relative;
+    color: #38623e;
+    font-weight: 700;
+}
+
+.site-header__nav a.is-active:not(.site-header__contact)::after {
+    content: "";
+    position: absolute;
+    right: auto;
+    bottom: 4px;
+    left: 50%;
+    width: 72px;
+    height: 2px;
+    border-radius: 2px;
+    background: #38623e;
+    transform: translateX(-50%);
+}
+
+/* Home is the first link and has reduced left padding, so center its marker on the text. */
+.site-header__nav > div:first-child > a:first-child.is-active::after {
+    left: calc(50% - 14px);
+    transform: translateX(-50%);
+}
+
+.site-header__nav .site-header__contact.is-active { background: #38623e; }
 
 .pre-footer {
     height: 569px;
@@ -713,6 +737,8 @@ nav .contact {
 
 .built-header {
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: flex-end;
     margin-bottom: 22px;
     width: 100%;
@@ -732,7 +758,7 @@ nav .contact {
 .built-grid {
     display: flex;
     gap: 20px;
-    align-items: flex-start;
+    align-items: flex-end;
     width: 100%;
 }
 
@@ -772,15 +798,18 @@ nav .contact {
 }
 
 .ingredient-card img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .ingredient-card:hover img {
-    transform: scale(1.04);
+    transform: none;
 }
 
 .ingredient-card__overlay {
@@ -839,6 +868,11 @@ nav .contact {
     text-decoration: none;
     transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
     box-shadow: 0 4px 14px rgba(67, 36, 16, 0.18);
+}
+
+.built-header .built-button {
+    margin: 18px 0 0;
+    width: 270px;
 }
 
 .built-button:hover {
@@ -1905,7 +1939,7 @@ main > section {
     .pre-footer {
         --cta-panel-inset: clamp(3rem, 5.6vw, 6.7rem);
         left: 50% !important;
-        width: 100vw !important;
+        width: min(100vw, 1440px) !important;
         max-width: none !important;
         margin-inline: 0 !important;
         transform: translateX(-50%) !important;
@@ -1944,6 +1978,17 @@ main > section {
         border-bottom: 0 !important;
         background: #64301b !important;
         color: #fff !important;
+    }
+
+    .site-header .site-header__mobile-menu > a.is-active:not(.site-header__mobile-contact) {
+        color: #38623e !important;
+        font-weight: 700 !important;
+        border-left: 3px solid #38623e;
+        padding-left: 12px !important;
+    }
+
+    .site-header .site-header__mobile-menu > .site-header__mobile-contact.is-active {
+        background: #38623e !important;
     }
 }
 
@@ -2002,8 +2047,28 @@ h1, h2, h3, h4, h5, h6,
 .mosaic-card:hover img { transform: scale(1.08); filter: saturate(1.08); }
 .research article:hover img { transform: scale(1.06); }
 .pre-footer:hover .pre-footer__image { transform: scale(1.018); }
-.accordion button { transition: background-color 220ms ease, transform 220ms ease; }
-.accordion button:hover { transform: translateX(6px); background: #e1e9e1; }
+.advantage .accordion { display: flex; flex-direction: column; gap: 8px; }
+.advantage .accordion button { border: 1px solid #eee4dd; border-bottom: 1px solid #eee4dd; transition: background-color 220ms ease; }
+.advantage .accordion button:hover,
+.advantage .accordion button:focus-visible { transform: none; background-color: #fff !important; opacity: 1; }
+
+.advantage .accordion button em {
+    display: block;
+    min-height: 0;
+    max-height: 0;
+    padding-top: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: max-height 480ms cubic-bezier(.2,.75,.25,1), padding-top 480ms cubic-bezier(.2,.75,.25,1), opacity 280ms ease, transform 480ms cubic-bezier(.2,.75,.25,1);
+}
+
+.advantage .accordion button.is-open em {
+    max-height: 120px;
+    padding-top: 9px;
+    opacity: 1;
+    transform: translateY(0);
+}
 
 @supports (animation-timeline: view()) {
     .purpose-copy, .markets article, .adv-copy, .built h2, .mosaic, .source-heading, .research, .pre-footer__panel, .pre-footer__image, .site-footer>* {
@@ -2137,7 +2202,7 @@ h1, h2, h3, h4, h5, h6,
     .site-header__brand span { margin-left: .75vw; padding-left: .7vw; font-size: .72vw; line-height: .72vw; }
     .site-header__search { width: 16.7vw; height: 2vw; font-size: 1.1vw; }
     .site-header__nav { height: 2vw; padding-inline: var(--header-side-space); font-size: .7vw; }
-    .site-header__nav a { height: 2vw; padding-inline: 1.4vw; }
+    .site-header__nav a, .site-header__nav .site-header__voices { height: 2vw; padding-inline: 1.4vw; }
     .site-header__nav > div:first-child > a:first-child { padding-left: 0; }
     .site-header__nav .site-header__contact { min-width: 10.8vw; margin-right: 0; font-size: .75vw; padding-inline: 1.65vw; }
     .site-header__contact b { font-size: 1vw; }
@@ -2168,7 +2233,7 @@ h1, h2, h3, h4, h5, h6,
     .adv-copy h2 { font-size: clamp(2.25rem, 3.125vw, 3rem); }
     .built h2, .source h2 { font-size: 3vw; }
     .adv-copy>p { font-size: clamp(.94rem, 1.05vw, 1.05rem); }
-    .source-heading p { font-size: 1.05vw; }
+    .source-heading p { font-size: clamp(13px, 1.05vw, 15px); }
     .accordion { margin-top: 2vw; }
     .accordion button { grid-template-columns: 1fr 2.5vw; padding: .7vw 1.1vw; font-size: clamp(.88rem, .9vw, 1rem); }
     .accordion button b { font-size: clamp(1rem, 1.1vw, 1.25rem); }
@@ -2183,7 +2248,7 @@ h1, h2, h3, h4, h5, h6,
     .ingredient-card--sharp { height: 29.5vw; border-radius: 0 !important; }
     .ingredient-pill { top: 1.1vw; left: 1.1vw; padding: .5vw .9vw .5vw .65vw; font-size: .85vw; }
     .ingredient-pill svg { width: .95vw; height: .95vw; flex-basis: .95vw; }
-    .built-button { margin-top: 1.5vw; height: 2.9vw; font-size: .78vw; border-radius: 9999px; }
+    .built-button { margin-top: clamp(12px, 1.5vw, 22px); height: clamp(36px, 2.9vw, 42px); font-size: clamp(11px, .78vw, 12px); border-radius: 9999px; white-space: nowrap; }
 
     /* Keep the transition from research cards to the CTA compact on wide screens. */
     .source { min-height: 0; padding: 3vw 4.5vw 3.5vw; }
@@ -2197,13 +2262,13 @@ h1, h2, h3, h4, h5, h6,
     .research-card__button svg { width: 1.15vw; height: 1.15vw; }
     .research-card__vertical-title span { font-size: 1.5vw; }
 
-    .pre-footer__panel { top: 5vw; height: 28.7vw; border-radius: 2vw 0 0 8.7vw; }
-    .pre-footer__content { width: 32.8vw; margin: 4.65vw 0 0 9.7vw; }
-    .pre-footer__content h2 { font-size: 2.9vw; letter-spacing: .035em !important; line-height: 1.06; }
-    .pre-footer__content p { margin: 1.7vw 0 3vw; font-size: 1.3vw; }
-    .pre-footer__actions { gap: 1.1vw; }
-    .pre-footer__actions a { height: 2.9vw; padding-inline: 2.15vw; font-size: .75vw; }
-    .pre-footer__primary span { font-size: 1.1vw; }
+    .pre-footer__panel { top: clamp(0px, 5vw, 72px); height: clamp(350px, 28.7vw, 413px); border-radius: clamp(16px, 2vw, 29px) 0 0 clamp(60px, 8.7vw, 125px); }
+    .pre-footer__content { width: clamp(300px, 32.8vw, 472px); margin: clamp(3rem, 4.65vw, 4.7rem) 0 0 clamp(4rem, 9.7vw, 9.8rem); }
+    .pre-footer__content h2 { font-size: clamp(2rem, 2.9vw, 2.75rem); letter-spacing: .035em !important; line-height: 1.06; }
+    .pre-footer__content p { margin: clamp(1rem, 1.7vw, 1.6rem) 0 clamp(1.5rem, 3vw, 2.8rem); font-size: clamp(0.9rem, 1.3vw, 1.2rem); }
+    .pre-footer__actions { gap: clamp(10px, 1.1vw, 16px); }
+    .pre-footer__actions a { height: clamp(36px, 2.9vw, 42px); padding-inline: clamp(1.2rem, 2.15vw, 2rem); font-size: clamp(10px, .75vw, 11px); }
+    .pre-footer__primary span { font-size: clamp(0.875rem, 1.1vw, 1rem); }
 
     .site-footer { min-height: 28vw; padding-block: 3.5vw; gap: 2vw; font-size: .8vw; }
     .site-footer__brand img { width: 11.5vw; height: 5.5vw; }

@@ -1,9 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import { usePathname } from "next/navigation";
 import {SiteImage} from "./SiteImage";
 function HeaderImage({ src, alt = "" }: { src: string; alt?: string }) {
   return <SiteImage src={`/figma-assets/${src}`} alt={alt} />;
+}
+
+function HeaderNav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (open: boolean | ((prev: boolean) => boolean)) => void }) {
+  const pathname = usePathname();
+  const activeClass = (href: string) => pathname === href ? "is-active" : undefined;
+  return (
+    <>
+      <nav className="site-header__nav"><div><a className={activeClass("/")} href="/">Home</a><a className={activeClass("/about")} href="/about">About Us</a><a className={activeClass("/products")} href="/products">Products</a><a className={activeClass("/science")} href="/science">Science</a><a href="/#stories">Blog</a></div><div><span className="site-header__voices">Voices From Our World</span><a className={`site-header__contact ${activeClass("/contact") || ""}`} href="/contact">Contact us <b>→</b></a></div></nav>
+      {menuOpen&&<div className="site-header__mobile-menu" id="mobile-nav-menu" role="navigation" aria-label="Mobile navigation"><a className={activeClass("/")} href="/" onClick={()=>setMenuOpen(false)}>Home</a><a className={activeClass("/about")} href="/about" onClick={()=>setMenuOpen(false)}>About Us</a><a className={activeClass("/products")} href="/products" onClick={()=>setMenuOpen(false)}>Products</a><a className={activeClass("/science")} href="/science" onClick={()=>setMenuOpen(false)}>Science</a><a href="/#stories" onClick={()=>setMenuOpen(false)}>Blog</a><span className="site-header__voices-mobile">Voices From Our World</span><a className={`site-header__mobile-contact ${activeClass("/contact") || ""}`} href="/contact" onClick={()=>setMenuOpen(false)}>Contact us <b>→</b></a></div>}
+    </>
+  );
 }
 
 export function SiteHeader() {
@@ -14,8 +26,9 @@ export function SiteHeader() {
       <label className="site-header__search">Search <b>⌕</b></label>
       <button className={`site-header__menu-toggle ${menuOpen?"is-open":""}`} type="button" aria-label="Toggle navigation menu" aria-expanded={menuOpen} aria-controls="mobile-nav-menu" onClick={()=>setMenuOpen(open=>!open)}><i/><i/><i/></button>
     </div>
-    <nav className="site-header__nav"><div><a href="/">Home</a><a href="/about">About Us</a><a href="/products">Products</a><a href="/science">Science</a><a href="/#stories">Blog</a></div><div><a className="site-header__voices" href="/#stories">Voices From Our World</a><a className="site-header__contact" href="/contact">Contact us <b>→</b></a></div></nav>
-    {menuOpen&&<div className="site-header__mobile-menu" id="mobile-nav-menu" role="navigation" aria-label="Mobile navigation"><a href="/" onClick={()=>setMenuOpen(false)}>Home</a><a href="/about" onClick={()=>setMenuOpen(false)}>About Us</a><a href="/products" onClick={()=>setMenuOpen(false)}>Products</a><a href="/science" onClick={()=>setMenuOpen(false)}>Science</a><a href="/#stories" onClick={()=>setMenuOpen(false)}>Blog</a><a href="/#stories" onClick={()=>setMenuOpen(false)}>Voices From Our World</a><a className="site-header__mobile-contact" href="/contact" onClick={()=>setMenuOpen(false)}>Contact us <b>→</b></a></div>}
+    <Suspense fallback={<nav className="site-header__nav"><div><a href="/">Home</a><a href="/about">About Us</a><a href="/products">Products</a><a href="/science">Science</a><a href="/#stories">Blog</a></div><div><span className="site-header__voices">Voices From Our World</span><a className="site-header__contact" href="/contact">Contact us <b>→</b></a></div></nav>}>
+      <HeaderNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    </Suspense>
   </header>;
 }
 

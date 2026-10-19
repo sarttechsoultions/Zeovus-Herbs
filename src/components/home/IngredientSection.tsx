@@ -50,13 +50,16 @@ function IngredientMark() {
 export function IngredientSection() {
   return (
     <section id="ingredients" className="built">
-      {/* Heading placed above the cards aligned to the right */}
+      {/* Heading and CTA sit together above the cards. */}
       <div className="built-header">
         <h2>Ingredients Built Around Science.</h2>
+        <a href="/products" className="built-button">
+          VIEW ALL INGREDIENTS <span className="built-button__arrow">→</span>
+        </a>
       </div>
 
       <div className="built-grid">
-        {/* Left Card: Featured with rounded corners + button */}
+        {/* Left card: featured with rounded corners */}
         <div className="built-col-featured">
           <div className="ingredient-card ingredient-card--featured">
             <HomeImage src={featuredIngredient.image} alt={featuredIngredient.name} />
@@ -66,10 +69,6 @@ export function IngredientSection() {
               <span>{featuredIngredient.name}</span>
             </span>
           </div>
-
-          <a href="/products" className="built-button">
-            VIEW ALL INGREDIENTS <span className="built-button__arrow">→</span>
-          </a>
         </div>
 
         {/* Right 3 Cards: Sharp corners (border-radius: 0) */}
