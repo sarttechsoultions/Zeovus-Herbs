@@ -8,3 +8,4 @@ async function AuthenticatedDashboard({children}:{children:ReactNode}){
  return <DashboardShell>{children}</DashboardShell>;
 }
 export default function DashboardLayout({children}:{children:ReactNode}){return <AuthenticatedDashboard>{children}</AuthenticatedDashboard>}
+
