@@ -1,0 +1,118 @@
+.home-page{width:100%;max-width:none}.home-page .hero h1{font-family:Arial,sans-serif!important;font-weight:700!important;font-size:5.42vw!important;line-height:1.03!important;letter-spacing:.02em}.home-page .hero{height:40.28vw;min-height:0;border-radius:0 0 0 16.67vw}.home-page .purpose{margin-top:3.8vw!important;min-height:0;height:44.93vw!important;grid-template-columns:51.6% 48.4%!important}.home-page .purpose-image{height:44.3vw!important;min-height:0;width:88%!important;border-radius:0 0 7vw 0!important;box-shadow:12px 9px #5c3824}.home-page .purpose-copy{padding:8.8vw 6vw 4vw 0!important;align-self:start}.home-page .purpose h2{font-size:3.34vw!important;margin:0 0 1.6vw!important}.home-page .purpose p{font-size:1.12vw!important;line-height:1.5!important}.home-page .purpose .button{margin-top:4.2vw!important;width:auto!important;height:auto!important;font-size:1.39vw!important;padding:1vw 1.95vw}.home-page .markets{padding-top:2vw;min-height:0;gap:1.74vw}.home-page .markets .market-image{height:32.5vw;min-height:0}.home-page .markets article>div:not(.market-image){padding:3.3vw 5.2vw 2.8vw}.home-page .markets h2{font-size:3.125vw;margin-bottom:1.7vw}.home-page .markets p{font-size:1.05vw;line-height:1.6;min-height:7vw}.home-page .markets .button{display:flex;width:fit-content;margin:2.5vw auto 0}.home-page .advantage{height:56.94vw;min-height:0;margin-top:1.3vw}.home-page .advantage-photo img{width:100%;height:100%;object-fit:cover}.home-page .adv-copy{padding:10.5vw 3.7vw 4vw 5.1vw;align-self:start}.home-page .adv-copy h2{text-align:center;font-size:3.125vw;margin-bottom:2vw}.home-page .adv-copy>p{font-size:1.12vw;line-height:1.5}.home-page .accordion{margin-top:2.5vw}.home-page .accordion button{font-size:1.12vw;padding:.55vw 1.1vw;background:white}.home-page .accordion button em{font-size:1.12vw;line-height:1.5}.home-page .built{padding:3.6vw 4.1vw 2vw}.home-page .built-header{margin-bottom:3vw}.home-page .built-header h2{font-size:3.34vw}.home-page .built-col-featured{flex-basis:28%}.home-page .ingredient-card--featured{height:40.2vw}.home-page .built-cards-row{margin-top:2.5vw;gap:1.4vw}.home-page .ingredient-card--sharp{height:35.9vw}.home-page .built-button{margin-top:1.2vw}.home-page .source{padding:2vw 4.2vw}.home-page .source-heading{margin-bottom:3vw}.home-page .source-heading h2{font-size:3.89vw}.home-page .source-heading p{font-size:1.12vw}.home-page .research{height:33vw}.home-page .research-card__title{font-size:2.5vw}.home-page .research-card__description{font-size:1.67vw;max-width:40vw;line-height:1.15}.home-page .research-card__vertical-title span{font-size:2.64vw}.home-page .pre-footer{height:39.5vw;min-height:0;margin-top:2vw}.home-page .pre-footer__panel{left:7.4vw;width:77.6vw;top:5vw;height:28.7vw;border-radius:20px 20px 20px 9vw}.home-page .pre-footer__image{width:50.5vw!important;height:39.2vw!important;left:59.1vw!important;right:auto!important;top:2.8vw!important;border-top-left-radius:9vw}.home-page .pre-footer__content{margin:4.7vw 0 0 9.7vw;width:32.8vw}.home-page .pre-footer__content h2{font-size:3.89vw}.home-page .pre-footer__content p{font-size:1.53vw;line-height:1.625}.home-page .pre-footer__actions{position:relative;z-index:1}.home-page .site-footer{margin-top:0}
+@media(max-width:760px){.home-page .hero{height:75svh;min-height:480px;position:relative}.home-page .hero .hero-copy{padding-top:40px;justify-content:center}.home-page .hero h1{font-size:13vw!important;margin-top:20px!important;margin-bottom:24px!important}.home-page .purpose{height:auto!important;display:block!important;margin-top:30px!important}.home-page .purpose-image{width:94%!important;height:80vw!important}.home-page .purpose-copy{padding:45px 28px!important}.home-page .purpose h2{font-size:38px!important;margin-bottom:20px!important}.home-page .purpose p{font-size:16px!important}.home-page .purpose .button{font-size:14px!important;margin-top:28px!important;padding:14px 22px}.home-page .markets .market-image{height:65vw}.home-page .markets article>div:not(.market-image){padding:30px 28px}.home-page .markets h2{font-size:34px;margin-bottom:20px}.home-page .markets p{font-size:15px;min-height:0}.home-page .markets .button{margin-top:25px}.home-page .advantage{height:auto;min-height:0}.home-page .advantage-photo{height:90vw!important}.home-page .adv-copy{padding:40px 28px}.home-page .adv-copy h2{font-size:38px}.home-page .adv-copy>p,.home-page .accordion button,.home-page .accordion button em{font-size:15px}.home-page .accordion{margin-top:25px}.home-page .accordion button{padding:12px 15px}.home-page .built,.home-page .source{padding:35px 24px}.home-page .built-header h2,.home-page .source-heading h2{font-size:36px}.home-page .ingredient-card--featured{height:90vw}.home-page .built-cards-row{margin-top:20px;gap:15px}.home-page .ingredient-card--sharp{height:85vw}.home-page .research{height:110vw}.home-page .source-heading p{font-size:15px}.home-page .research-card__title{font-size:22px}.home-page .research-card__description{font-size:15px;max-width:70vw}.home-page .research-card__vertical-title span{font-size:20px}.home-page .pre-footer{height:auto;min-height:650px}.home-page .pre-footer__panel{position:relative;left:0;top:0;width:100%;height:auto;padding:35px 25px}.home-page .pre-footer__content{width:auto;margin:0}.home-page .pre-footer__content h2{font-size:38px}.home-page .pre-footer__content p{font-size:17px}.home-page .pre-footer__image{position:relative!important;left:20%!important;top:0!important;width:80%!important;height:75vw!important}.home-page .built-button{margin-top:18px}}
+
+/* Reveal alternating sections as they enter the viewport. */
+.home-scroll-reveal{margin-top:3.8vw;overflow-x:clip}
+.home-reveal-item{position:relative}
+.home-page .home-reveal-item>section{width:100%!important;max-width:none!important;left:auto!important;transform:none!important;margin-inline:0!important;margin-top:0!important}
+.home-scroll-reveal.reveal-ready .home-reveal-item{transition:opacity 750ms ease,transform 850ms cubic-bezier(.2,.75,.25,1)}
+.home-scroll-reveal.reveal-ready .home-reveal-item:not(.is-visible){opacity:0;transform:translateX(-70px)}
+.home-scroll-reveal.reveal-ready .home-reveal-item:nth-child(even):not(.is-visible){transform:translateX(70px)}
+.home-scroll-reveal .home-reveal-item.is-visible{opacity:1;transform:none}
+@media(max-width:760px){.home-scroll-reveal{margin-top:30px}.home-scroll-reveal.reveal-ready .home-reveal-item:not(.is-visible){transform:translateX(-28px)}.home-scroll-reveal.reveal-ready .home-reveal-item:nth-child(even):not(.is-visible){transform:translateX(28px)}}
+@media(prefers-reduced-motion:reduce){.home-scroll-reveal.reveal-ready .home-reveal-item{opacity:1!important;transform:none!important;transition:none!important}}
+
+/* ── Purpose Section: image slides from left, copy slides from right ── */
+/* Cancel the parent wrapper's own X-slide for this section so children own the motion */
+.home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose):not(.is-visible){transform:none}
+
+/* Initial hidden state for the two children */
+.home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-image{
+  opacity:0;
+  transform:translateX(-80px);
+  transition:opacity 750ms ease,transform 900ms cubic-bezier(.2,.75,.25,1);
+}
+.home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-copy{
+  opacity:0;
+  transform:translateX(80px);
+  transition:opacity 750ms ease 120ms,transform 900ms cubic-bezier(.2,.75,.25,1) 120ms;
+}
+
+/* Reveal state — snap into place */
+.home-scroll-reveal.reveal-ready .home-reveal-item.is-visible .purpose-image,
+.home-scroll-reveal.reveal-ready .home-reveal-item.is-visible .purpose-copy{
+  opacity:1;
+  transform:none;
+}
+
+/* Mobile: slide from top/bottom instead of left/right (layout stacks) */
+@media(max-width:760px){
+  .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-image{transform:translateY(-40px)}
+  .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-copy{transform:translateY(40px)}
+}
+
+/* Respect reduced-motion */
+@media(prefers-reduced-motion:reduce){
+  .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-image,
+  .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-copy{
+    opacity:1!important;transform:none!important;transition:none!important;
+  }
+}
+
+/* Cap the CTA composition at its desktop design size on large monitors. */
+@media (min-width:1441px){
+  .home-page .home-reveal-item>.pre-footer{
+    width:1440px!important;
+    max-width:calc(100vw - 64px)!important;
+    height:569px!important;
+    min-height:0!important;
+    margin:32px auto 0!important;
+    left:auto!important;
+    transform:none!important;
+  }
+  .home-page .pre-footer__panel{left:107px!important;top:73px!important;width:calc(100% - 107px)!important;height:413px!important;border-radius:30px 0 0 125px!important}
+  .home-page .pre-footer__image{left:auto!important;right:0!important;top:40px!important;width:727px!important;height:565px!important;border-top-left-radius:125px!important}
+  .home-page .pre-footer__content{width:472px!important;margin:67px 0 0 139px!important}
+  .home-page .pre-footer__content h2{font-size:54px!important}
+  .home-page .pre-footer__content p{font-size:19px!important}
+}
+
+/* Mobile CTA: a single, contained card with a full-width image below the copy. */
+@media (max-width:760px){
+  .home-page .home-reveal-item>.pre-footer{
+    display:block!important;
+    width:calc(100% - 32px)!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:24px 16px 0!important;
+    overflow:hidden;
+    border-radius:24px;
+    background:#51260f;
+  }
+  .home-page .pre-footer__panel{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    padding:34px 24px 30px!important;
+    border-radius:0!important;
+  }
+  .home-page .pre-footer__content{width:auto!important;margin:0!important}
+  .home-page .pre-footer__content h2{font-size:38px!important;line-height:1.05!important}
+  .home-page .pre-footer__content p{margin:18px 0 28px!important;font-size:16px!important;line-height:1.55!important}
+  .home-page .pre-footer__actions{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+  .home-page .pre-footer__actions a{width:100%;height:46px;box-sizing:border-box}
+  .home-page .pre-footer__image{
+    position:relative!important;
+    inset:auto!important;
+    display:block;
+    width:100%!important;
+    height:300px!important;
+    border-radius:0!important;
+    object-fit:cover;
+    object-position:center 35%;
+    transform:none!important;
+  }
+  .home-page .home-reveal-item>.pre-footer{margin-bottom:26px!important}
+  .home-page .site-footer__brand img{
+    width:150px!important;
+    height:74px!important;
+    padding:10px 12px!important;
+    box-sizing:border-box;
+    border-radius:14px;
+    background:#fff;
+    mix-blend-mode:normal;
+    object-position:center;
+  }
+}
