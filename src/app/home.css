@@ -37,8 +37,10 @@
 
 /* Mobile: slide from top/bottom instead of left/right (layout stacks) */
 @media(max-width:760px){
-  .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-image{transform:translateY(-40px)}
+  .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-image{transform:translateY(20px)}
   .home-scroll-reveal.reveal-ready .home-reveal-item:has(.purpose) .purpose-copy{transform:translateY(40px)}
+  .home-scroll-reveal.reveal-ready .home-reveal-item.is-visible:has(.purpose) .purpose-image,
+  .home-scroll-reveal.reveal-ready .home-reveal-item.is-visible:has(.purpose) .purpose-copy{transform:none}
 }
 
 /* Respect reduced-motion */
