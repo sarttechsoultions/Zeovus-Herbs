@@ -2223,5 +2223,14 @@ h1, h2, h3, h4, h5, h6,
     .purpose { margin-top: 0 !important; }
 }
 
+.site-footer__brand img {
+    padding: 9px 12px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    background: #fff;
+    mix-blend-mode: normal;
+    object-position: center;
+}
+
 
 
