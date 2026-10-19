@@ -10,7 +10,7 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   return <header className="site-header">
     <div className="site-header__top">
-      <div className="site-header__brand"> <a href="/"><HeaderImage src="logo.png" alt="Zeovus Herbs" /><span>Plants with<br />purpose</span></a></div>
+      <div className="site-header__brand"> <HeaderImage src="logo.png" alt="Zeovus Herbs" /><span>Plants with<br />purpose</span></div>
       <label className="site-header__search">Search <b>⌕</b></label>
       <button className={`site-header__menu-toggle ${menuOpen?"is-open":""}`} type="button" aria-label="Toggle navigation menu" aria-expanded={menuOpen} aria-controls="mobile-nav-menu" onClick={()=>setMenuOpen(open=>!open)}><i/><i/><i/></button>
     </div>
