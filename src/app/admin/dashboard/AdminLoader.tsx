@@ -1,0 +1,1 @@
+export default function AdminLoader({label="Loading workspace…"}:{label?:string}){return <div className="admin-loader" role="status" aria-live="polite"><span className="admin-loader-spinner" aria-hidden="true"/><span>{label}</span></div>}
