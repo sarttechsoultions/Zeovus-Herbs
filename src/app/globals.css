@@ -2301,3 +2301,5 @@ h1, h2, h3, h4, h5, h6,
 
 .site-header__contact svg,.site-header__mobile-contact svg{flex-shrink:0;vertical-align:middle}
 @media(max-width:760px){.site-header .site-header__mobile-menu>.site-header__mobile-contact{position:relative;display:flex;align-items:center;justify-content:space-between;margin-top:20px}.site-header__mobile-contact::before{content:"";position:absolute;left:0;right:0;top:-11px;height:1px;background:#e6dcd5}}
+
+.ui-arrow-icon{display:inline-block;vertical-align:middle;flex-shrink:0;width:1.2em;height:1.2em}

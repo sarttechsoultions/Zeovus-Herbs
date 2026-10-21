@@ -1,4 +1,5 @@
 "use client";
+import ArrowIcon from "@/components/ArrowIcon";
 
 import { HomeImage } from "./shared";
 
@@ -54,7 +55,7 @@ export function IngredientSection() {
       <div className="built-header">
         <h2>Ingredients Built Around Science.</h2>
         <a href="/products" className="built-button">
-          VIEW ALL INGREDIENTS <span className="built-button__arrow">→</span>
+          VIEW ALL INGREDIENTS <span className="built-button__arrow"><ArrowIcon direction="right"/></span>
         </a>
       </div>
 

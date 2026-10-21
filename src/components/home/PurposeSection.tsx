@@ -1,3 +1,4 @@
+import ArrowIcon from "@/components/ArrowIcon";
 import { HomeImage } from "./shared";
 
 export function PurposeSection() {
@@ -8,7 +9,7 @@ export function PurposeSection() {
       <p className="purpose-text">Zeovus Herbs connects clinically studied botanical and natural ingredients with businesses across global markets.</p>
       <p className="purpose-text">From taking Indian ingredients to the world to representing global ingredient innovators in India, we bring together <b>science, ingredient understanding and market access.</b></p>
       <p className="purpose-text purpose-text--last">As part of Zeovus Group, our perspective extends beyond the ingredient itself to the products and applications it can become.</p>
-      <a href="/about" className="button purpose-button">Discover Zeovus Herbs <b>→</b></a>
+      <a href="/about" className="button purpose-button">Discover Zeovus Herbs <b><ArrowIcon direction="right"/></b></a>
     </div>
   </section>;
 }

@@ -1,3 +1,4 @@
+import ArrowIcon from "@/components/ArrowIcon";
 import {SiteImage} from "../SiteImage";
 import type { ReactNode } from "react";
 
@@ -8,7 +9,7 @@ export function HomeImage({ src, alt = "" }: { src: string; alt?: string }) {
 }
 
 export function HomeButton({ children, outline = false, href = "/products" }: { children: ReactNode; outline?: boolean; href?: string }) {
-  return <a href={href} className={`button ${outline ? "outline" : ""}`}>{children} <b>→</b></a>;
+  return <a href={href} className={`button ${outline ? "outline" : ""}`}>{children} <b><ArrowIcon direction="right"/></b></a>;
 }
 
 
