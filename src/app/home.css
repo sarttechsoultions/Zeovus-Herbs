@@ -119,3 +119,142 @@
 @media (max-width: 760px) {
   .home-page .built-header .built-button { margin-top: 18px; }
 }
+/* Home page reference: Figma 2032:252. Keep these changes scoped to home. */
+.home-page .leafbg:after{background:none!important}
+.home-page .hero-copy{padding:0!important;justify-content:flex-start}
+.home-page .hero h1{margin:12.6vw 0 7.8vw!important;font-family:Poppins,Arial,sans-serif!important;text-shadow:2px 3px 4px #0004}
+.home-page .hero .button{background:#36623f;font-size:1.39vw;padding:.84vw 1.39vw;border-radius:24px}
+.home-page .purpose-copy{width:auto!important;padding:6.6vw 3.7vw 0 0!important}
+.home-page .purpose h2{font-size:3.125vw!important;white-space:nowrap}
+.home-page .purpose-image{width:86%!important;height:44.6vw!important;margin-top:0!important}
+.home-page .purpose .button{margin-top:6.2vw!important}
+.home-page .markets article>div:not(.market-image){padding:3.3vw 3.7vw 2.8vw 5.2vw}
+.home-page .markets h2{white-space:nowrap}
+.home-page .advantage{height:49.3vw;min-height:0}
+.home-page .adv-copy{padding:2.85vw 3.7vw 3vw 5.1vw}
+.home-page .adv-copy h2{margin-bottom:3.25vw}
+.home-page .accordion{margin-top:3.2vw}
+.home-page .built{padding:4.15vw 4.1vw 3.4vw}
+.home-page .built-header{align-items:center;margin-bottom:2.2vw}
+.home-page .built-header h2{text-align:center}
+.home-page .built-grid{align-items:stretch;gap:1.1vw}
+.home-page .built-col-featured{flex:0 0 calc((100% - 3.3vw)/4)}
+.home-page .built-cards-row{margin-top:0;gap:1.1vw}
+.home-page .ingredient-card{display:block;height:35.9vw;border-radius:0}
+.home-page .ingredient-pill{left:.5vw;top:1.2vw;font-size:.9vw;font-weight:400;gap:.5vw;padding:.4vw .7vw;max-width:calc(100% - 1vw)}
+.home-page .built-button{margin:2.8vw auto 0;width:fit-content;max-width:none;height:auto;padding:1vw 1.95vw;font-size:1.39vw}
+.home-page .heritage-story{display:grid;grid-template-columns:1fr 1fr;gap:5.9vw;padding:2.9vw 3.7vw 2.9vw 4.1vw;background:#fff5ef;align-items:center}
+.home-page .heritage-copy h2{font-family:"dharma-gothic-e",sans-serif;font-size:3.125vw;line-height:1.1;color:#5c3824;margin:0 0 2.4vw}
+.home-page .heritage-copy p{font-size:1.12vw;line-height:1.5;letter-spacing:.5px;color:#282928;margin:0}
+.home-page .heritage-image{height:29.8vw;border-radius:6px;overflow:hidden}
+.home-page .heritage-image img{display:block;width:100%;height:100%;object-fit:cover}
+.home-page .heritage-statistics{display:grid;grid-template-columns:repeat(3,1fr);gap:4.5vw;padding:2.2vw 16.9vw;margin:0;text-align:center;background:white}
+.home-page .heritage-statistics dt{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:2.43vw;line-height:1.8;color:black}
+.home-page .heritage-statistics dd{font-weight:700;font-size:.98vw;line-height:1.3;color:#494949;margin:0}
+.home-page .source{padding-top:3.2vw}
+.home-page .source-heading{display:flex;align-items:center;gap:2vw;margin-bottom:3.3vw}
+.home-page .source-heading:after{content:"";width:12.6vw;height:3px;background:#64301b}
+.home-page .source-heading h2{white-space:nowrap}
+.home-page .research{height:32.43vw}
+.home-page .research-card__title{text-transform:none;letter-spacing:0;font-size:2.64vw}
+.home-page .research-card__vertical-title span{text-transform:none;font-size:2.22vw;letter-spacing:0}
+.home-page .research-card__content{top:1.4vw;left:1vw;right:1vw}
+.home-page .research-card__description{max-width:40.5vw}
+.home-page .research-card__button{bottom:0;right:0;background:white;color:#432410;border-radius:20px 0 0;width:6.5vw;height:3.33vw}
+.home-page .research-card:focus-visible,.home-page .ingredient-card:focus-visible{outline:3px solid #36623f;outline-offset:4px}
+@media(max-width:760px){
+.home-page .hero h1{margin:90px 0 34px!important;font-size:13vw!important}
+.home-page .hero .button{font-size:14px;padding:14px 22px}
+.home-page .purpose-copy{width:auto!important;padding:40px 24px!important}
+.home-page .purpose h2{font-size:36px!important;white-space:normal}
+.home-page .purpose-image{width:94%!important;height:80vw!important}
+.home-page .purpose .button{margin-top:28px!important}
+.home-page .markets h2{white-space:normal}
+.home-page .markets article>div:not(.market-image){padding:30px 24px}
+.home-page .advantage{height:auto;display:block}
+.home-page .adv-copy{padding:36px 24px}
+.home-page .adv-copy h2{margin-bottom:24px}
+.home-page .accordion{margin-top:24px}
+.home-page .built{padding:36px 24px}
+.home-page .built-header{align-items:center;margin-bottom:24px}
+.home-page .built-grid{display:block}
+.home-page .built-cards-row{grid-template-columns:1fr;gap:18px;margin-top:18px}
+.home-page .ingredient-card{height:90vw;border-radius:0}
+.home-page .ingredient-pill{left:12px;top:16px;padding:6px 10px;font-size:13px;gap:8px;max-width:calc(100% - 24px)}
+.home-page .built-button{margin:24px auto 0;font-size:13px;padding:14px 24px}
+.home-page .heritage-story{grid-template-columns:1fr;padding:36px 24px;gap:28px}
+.home-page .heritage-copy h2{font-size:36px;margin-bottom:22px}
+.home-page .heritage-copy p{font-size:16px}
+.home-page .heritage-image{height:65vw}
+.home-page .heritage-statistics{padding:24px 16px;gap:12px}
+.home-page .heritage-statistics dt{font-size:25px}
+.home-page .heritage-statistics dd{font-size:11px}
+.home-page .source{padding:32px 24px}
+.home-page .source-heading{margin-bottom:24px}
+.home-page .source-heading h2{white-space:normal;font-size:36px}
+.home-page .source-heading:after{display:none}
+.home-page .research{height:auto}
+.home-page .research-card__title{font-size:23px}
+.home-page .research-card__description{font-size:16px;max-width:none}
+.home-page .research-card__vertical-title span{font-size:18px}
+.home-page .research-card__content{top:20px;left:18px;right:18px}
+.home-page .research-card__button{width:60px;height:40px}
+}
+.home-page .source-heading{justify-content:flex-start}
+.home-page .ingredient-mark{position:static;width:auto;height:auto;object-fit:contain;flex-shrink:0;transform:none}
+.home-page .ingredient-card__overlay{background:linear-gradient(180deg,transparent 60%,#432410bb 100%)}
+@media(min-width:761px){
+.home-page .site-header__top{height:6.18vw;padding-inline:3.54vw}
+.home-page .site-header__brand img{width:8.26vw;height:3.54vw}
+.home-page .site-header__brand span{font-size:.9vw;line-height:1.1vw}
+.home-page .site-header__nav{height:2.64vw;padding-inline:3.54vw;font-size:.9vw}
+.home-page .site-header__nav a,.home-page .site-header__nav .site-header__voices{height:2.64vw;font-size:.9vw}
+.home-page .site-header__contact{min-width:10.83vw!important}
+.home-page .markets .market-image{position:relative;overflow:hidden}
+.home-page .markets .market-image img{position:absolute;width:71.11vw;height:47.36vw;max-width:none;left:-4.86vw;top:-8.19vw;object-fit:cover}
+.home-page .markets article:nth-child(2) .market-image img{left:-7.57vw;top:-7.43vw}
+.home-page .research-card img{position:absolute;max-width:none;transform:none}
+.home-page .research-card:nth-child(1) img{width:47.99vw;height:85.35vw;top:-5.97vw;left:0;object-fit:cover}
+.home-page .research-card:nth-child(2) img{width:48.75vw;height:36.6vw;top:-.9vw;left:-1.39vw}
+.home-page .research-card:nth-child(3) img{width:49.38vw;height:32.92vw;top:.14vw;left:-8.89vw}
+.home-page .research-card__title{font-family:Arial,sans-serif!important}
+.home-page .heritage-story{grid-template-columns:595fr 644fr;gap:6.18vw}
+}
+.home-page .hero .button>img{width:auto;height:auto;flex-shrink:0}
+.home-page .research-card .research-arrow{position:static;width:auto;height:auto;max-width:none;object-fit:contain;transform:none}
+.home-page .research-card .research-card__button img{position:static;width:auto;height:auto;max-width:none;object-fit:contain;transform:none}
+/* Light green tint over the hero video. */
+.home-page .leafbg:after{background:linear-gradient(180deg,rgba(18,70,32,.18),rgba(12,57,26,.28))!important}
+
+/* Opening an accordion row must not resize or animate the adjacent photo. */
+.home-page .advantage{grid-template-rows:minmax(0,1fr)}
+.home-page .advantage-photo{align-self:start;height:100%;overflow:hidden}
+.home-page .advantage-photo img{display:block;transform:none!important;transition:none!important}
+.home-page .adv-copy{animation:none!important;transform:none!important}
+@media (min-width:761px) and (max-width:980px){
+  .home-page .advantage{height:auto;display:block}
+  .home-page .advantage-photo{height:52svh!important;min-height:360px}
+  .home-page .adv-copy{width:100%;padding:40px 36px!important}
+}
+@media (max-width:760px){
+  .home-page .advantage{grid-template-rows:none}
+  .home-page .advantage-photo{height:90vw!important}
+}
+/* Keep the research link flush with the card's lower-right corner. */
+.home-page .research-card--active{border-bottom-right-radius:0}
+.home-page .research-card .research-card__button{
+  right:0;bottom:0;width:110px;height:64px;
+  display:flex;align-items:center;justify-content:center;
+  padding:6px 12px 6px 15px;box-sizing:border-box;
+  border-radius:24px 0 0 0;background:#fff;color:#432410;
+  box-shadow:none;overflow:hidden;
+}
+.home-page .research-card .research-card__button:hover{
+  background:#fff;transform:none!important;
+}
+.home-page .research-card .research-card__button:focus-visible{
+  outline:3px solid #36623f;outline-offset:-4px;
+}
+@media(max-width:760px){
+  .home-page .research-card .research-card__button{width:104px;height:60px;padding:4px 9px 4px 12px}
+}

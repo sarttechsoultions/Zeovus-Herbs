@@ -1,3 +1,4 @@
+import { BotanicalHeritageSection } from "../components/home/BotanicalHeritageSection";
 import { ScrollReveal } from "../components/home/ScrollReveal";
 import "./home.css";
 import { SiteHeader } from "../components/SiteHeader";
@@ -19,6 +20,7 @@ export default function Home() {
         <div className="home-reveal-item"><MarketSection /></div>
         <div className="home-reveal-item"><AdvantageSection /></div>
         <div className="home-reveal-item"><IngredientSection /></div>
+        <div className="home-reveal-item"><BotanicalHeritageSection /></div>
         <div className="home-reveal-item"><ScienceSection /></div>
         <div className="home-reveal-item"><GrowTogetherSection /></div>
         </ScrollReveal>

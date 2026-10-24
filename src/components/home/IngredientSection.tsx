@@ -1,5 +1,6 @@
 "use client";
-import ArrowIcon from "@/components/ArrowIcon";
+import Link from "next/link";
+
 
 import { HomeImage } from "./shared";
 
@@ -12,7 +13,7 @@ interface IngredientItem {
 const featuredIngredient: IngredientItem = {
   id: "botanical-extracts",
   name: "Botanical Extracts",
-  image: "/home-assets/imgIstockphoto1735861991024X10241.png",
+  image: "/home-assets/imgIstockphoto19896105631024X10242.png",
 };
 
 const rightIngredients: IngredientItem[] = [
@@ -35,57 +36,49 @@ const rightIngredients: IngredientItem[] = [
 
 function IngredientMark() {
   return (
-    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true">
-      <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.25" />
-      <path
-        d="M5.5 10.5L10.5 5.5M10.5 5.5H7M10.5 5.5V9"
-        stroke="currentColor"
-        strokeWidth="1.25"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <img src="/home-assets/imgGroup.svg" alt="" className="ingredient-mark" />
   );
 }
 
 export function IngredientSection() {
   return (
     <section id="ingredients" className="built">
-      {/* Heading and CTA sit together above the cards. */}
+
       <div className="built-header">
-        <h2>Ingredients Built Around Science.</h2>
-        <a href="/products" className="built-button">
-          VIEW ALL INGREDIENTS <span className="built-button__arrow"><ArrowIcon direction="right"/></span>
-        </a>
+        <h2>Our Ingredients</h2>
+
       </div>
 
       <div className="built-grid">
-        {/* Left card: featured with rounded corners */}
+
         <div className="built-col-featured">
-          <div className="ingredient-card ingredient-card--featured">
+          <Link href="/products" className="ingredient-card ingredient-card--featured">
             <HomeImage src={featuredIngredient.image} alt={featuredIngredient.name} />
             <div className="ingredient-card__overlay" />
             <span className="ingredient-pill">
               <IngredientMark />
               <span>{featuredIngredient.name}</span>
             </span>
-          </div>
+          </Link>
         </div>
 
-        {/* Right 3 Cards: Sharp corners (border-radius: 0) */}
+
         <div className="built-cards-row">
           {rightIngredients.map((item) => (
-            <div key={item.id} className="ingredient-card ingredient-card--sharp">
+            <Link key={item.id} href="/products" className="ingredient-card ingredient-card--sharp">
               <HomeImage src={item.image} alt={item.name} />
               <div className="ingredient-card__overlay" />
               <span className="ingredient-pill">
                 <IngredientMark />
                 <span>{item.name}</span>
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
+        <Link href="/products" className="built-button">
+          VIEW ALL INGREDIENTS <span className="built-button__arrow"><img src="/home-assets/imgArrowRight.svg" alt="" /></span>
+        </Link>
     </section>
   );
 }

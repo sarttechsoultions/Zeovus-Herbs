@@ -12,30 +12,9 @@ interface ScienceCard {
 }
 
 const scienceCards: ScienceCard[] = [
-  {
-    id: "clinical-research",
-    title: "CLINICAL RESEARCH",
-    description:
-      "Understanding what has been studied, how it has been studied and what the available evidence tells us",
-    image: "/home-assets/imgLucasVasques9VnACvX2748Unsplash1.png",
-    alt: "Scientist examining botanical research samples with a microscope",
-  },
-  {
-    id: "standardisation",
-    title: "STANDARDISATION",
-    description:
-      "Rigorous standardisation protocols ensuring consistent active compounds, potency and purity across every batch.",
-    image: "/home-assets/imgPexelsBulat8431243575272340544741.png",
-    alt: "Laboratory technician standardising herbal extract formulations",
-  },
-  {
-    id: "traceability",
-    title: "TRACEABILITY",
-    description:
-      "Complete farm-to-extract visibility and documentation, verifying botanical origin, harvesting practices and chain of custody.",
-    image: "/home-assets/imgFlower350359012801.png",
-    alt: "Botanical plant specimen showing seed pods and traceability records",
-  },
+  { id: "manufacturing", title: "Manufacturing Capabilities", description: "Understanding what has been studied, how it has been studied and what the available evidence tells us", image: "/home-assets/imgPexelsBulat8431243575272340544741.png", alt: "Botanical ingredient manufacturing" },
+  { id: "quality", title: "Quality Assurance & Control", description: "Ingredient quality, consistency and control across every batch.", image: "/home-assets/imgFlower350359012801.png", alt: "Botanical quality assurance" },
+  { id: "clinical-research", title: "Clinical Research", description: "Understanding ingredients through scientific evidence and clinical research.", image: "/home-assets/imgLucasVasques9VnACvX2748Unsplash1.png", alt: "Scientist working in a research laboratory" },
 ];
 
 export function ScienceSection() {
@@ -45,10 +24,7 @@ export function ScienceSection() {
     <section id="science" className="source">
       <div className="source-heading">
         <h2>From Source to Possibility</h2>
-        <p>
-          We believe understanding an ingredient begins with understanding the
-          science behind it.
-        </p>
+
       </div>
 
       <div className="research" role="tablist" aria-label="Science and Research Pillars">
@@ -81,23 +57,12 @@ export function ScienceSection() {
               </div>
 
               <a
-                href={`/science#${card.id}`}
+                href="/science"
                 className="research-card__button"
                 aria-label={`Explore ${card.title}`}
                 onClick={(e) => e.stopPropagation()}
               >
-                <svg
-                  width="17"
-                  height="17"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
+                <img className="research-arrow" src="/home-assets/imgBasilArrowRightOutline.svg" alt="" />
               </a>
 
               <div className="research-card__vertical-title">

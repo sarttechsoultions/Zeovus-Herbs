@@ -117,6 +117,12 @@
     font-weight: 700
 }
 
+@media (min-width: 761px) {
+    .about-story-copy .about-button {
+        transform: translateX(6vw)
+    }
+}
+
 .about-button img {
     object-fit: contain
 }
@@ -318,7 +324,8 @@
 
 .about-quality-intro {
     background: white;
-    padding: 3vw 4.4vw
+    padding: 3vw 4.4vw;
+    align-self: start
 }
 
 .about-quality-intro header {
@@ -356,17 +363,64 @@
     gap: 18px
 }
 
-.about-quality-list>div {
+.about-quality-list>article {
     background: white;
     border-radius: 11px;
-    padding: 14px 46px 14px 16px;
-    position: relative
+    overflow: hidden
 }
 
-.about-quality-list img {
-    position: absolute;
-    right: 15px;
-    top: calc(50% - 12px)
+.about-quality-list button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    padding: 14px 16px;
+    border: 0;
+    background: transparent;
+    color: #282928;
+    text-align: left;
+    cursor: pointer
+}
+
+.about-quality-list button:focus-visible {
+    outline: 2px solid #245b39;
+    outline-offset: -2px
+}
+
+.about-quality-list button span {
+    display: grid;
+    gap: 3px
+}
+
+.about-quality-list button small {
+    font-size: clamp(12px, .85vw, 15px);
+    line-height: 1.35
+}
+
+.about-quality-list button img {
+    position: static;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    object-fit: contain;
+    transition: transform .2s ease
+}
+
+.about-quality-list .is-open button img {
+    transform: rotate(90deg)
+}
+
+.about-quality-detail {
+    padding: 0 48px 18px 16px
+}
+
+.about-quality-detail[hidden] {
+    display: none
+}
+
+.about-content .about-quality-detail p {
+    font-size: clamp(13px, .92vw, 16px)
 }
 
 .about-research {
@@ -598,4 +652,71 @@
 @media (prefers-reduced-motion: reduce) {
     .about-hero > img,
     .about-hero h1 { animation: none; }
+}
+
+/* Align the About page sections with the Figma frame. */
+.about-page .site-header { margin-bottom: 37px; }
+.about-page .about-excellence { padding-block: 3.07vw; }
+.about-page .about-quality {
+    margin-top: 16px;
+    min-height: 43.6vw;
+}
+.about-page .about-certifications {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 18.2vw;
+    min-height: 180px;
+    padding: 0;
+    margin-top: 16px;
+    overflow: hidden;
+    background: #fff;
+}
+.about-page .about-certifications__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    min-width: max-content;
+    animation: about-certifications-scroll 60s linear infinite;
+    will-change: transform;
+}
+.about-page .about-certifications__track>div {
+    width: clamp(180px, 16.667vw, 320px);
+    height: clamp(100px, 8vw, 150px);
+    flex: 0 0 clamp(180px, 16.667vw, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-page .about-certifications__track img {
+    display: block;
+    width: 58%;
+    height: 100%;
+    object-fit: contain;
+}
+.about-page .about-certifications:hover .about-certifications__track { animation-play-state: paused; }
+@keyframes about-certifications-scroll {
+    to { transform: translateX(-50%); }
+}
+.about-page .about-sustainability { margin-top: 6px; }
+
+@media (max-width: 760px) {
+    .about-page .site-header { margin-bottom: 0; }
+    .about-page .about-excellence { padding-block: 35px; }
+    .about-page .about-quality { margin-top: 0; min-height: 0; }
+    .about-page .about-certifications {
+        height: auto;
+        min-height: 120px;
+        padding: 0;
+        margin-top: 0;
+    }
+    .about-page .about-certifications__track>div {
+        width: 150px;
+        height: 90px;
+        flex-basis: 150px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-page .about-certifications__track { animation: none; }
 }
