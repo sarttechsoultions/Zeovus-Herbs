@@ -5,16 +5,14 @@ import { HomeImage } from "./shared";
 
 interface ScienceCard {
   id: string;
-  title: string;
-  description: string;
-  image: string;
+  title: string;  image: string;
   alt: string;
 }
 
 const scienceCards: ScienceCard[] = [
-  { id: "manufacturing", title: "Manufacturing Capabilities", description: "Understanding what has been studied, how it has been studied and what the available evidence tells us", image: "/home-assets/imgPexelsBulat8431243575272340544741.png", alt: "Botanical ingredient manufacturing" },
-  { id: "quality", title: "Quality Assurance & Control", description: "Ingredient quality, consistency and control across every batch.", image: "/home-assets/imgFlower350359012801.png", alt: "Botanical quality assurance" },
-  { id: "clinical-research", title: "Clinical Research", description: "Understanding ingredients through scientific evidence and clinical research.", image: "/home-assets/imgLucasVasques9VnACvX2748Unsplash1.png", alt: "Scientist working in a research laboratory" },
+  { id: "manufacturing", title: "Manufacturing Capabilities", image: "/home-assets/imgPexelsBulat8431243575272340544741.png", alt: "Botanical ingredient manufacturing" },
+  { id: "quality", title: "Quality Assurance & Control", image: "/home-assets/imgFlower350359012801.png", alt: "Botanical quality assurance" },
+  { id: "clinical-research", title: "Clinical Research", image: "/home-assets/imgLucasVasques9VnACvX2748Unsplash1.png", alt: "Scientist working in a research laboratory" },
 ];
 
 export function ScienceSection() {
@@ -53,7 +51,6 @@ export function ScienceSection() {
 
               <div className="research-card__content">
                 <h3 className="research-card__title">{card.title}</h3>
-                <p className="research-card__description">{card.description}</p>
               </div>
 
               <a

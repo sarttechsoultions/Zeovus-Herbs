@@ -54,38 +54,6 @@
     .science-accordion { padding-right: 0; margin-top: 25px; }
 }
 
-.science-decisions {
-    display: grid;
-    grid-template-columns: 43% 1fr;
-    gap: 7%;
-    margin: 5vw 5.9% 0;
-    padding: 4.5vw 5.2vw;
-    background: #e8f0e9;
-    border-radius: 0 70px 0 70px;
-}
-.science-decisions small { color: #38623e; }
-.science-decisions h2 { max-width: 540px; }
-.science-decisions>div>p { max-width: 520px; }
-.science-decisions ol {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2vw;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.science-decisions li { border-left: 1px solid #9eb29f; padding-left: 1.25vw; }
-.science-decisions li>b { display: block; color: #38623e; font-size: clamp(16px, 1.55vw, 26px); margin-bottom: 2vw; }
-.science-decisions h3 { margin: 0 0 10px; font-size: clamp(15px, 1.2vw, 21px); line-height: 1.2; }
-.science-decisions li p { font-size: clamp(13px, .93vw, 16px); }
-
-@media (max-width:760px) {
-    .science-decisions { display: block; margin: 35px 20px 0; padding: 35px 25px; border-radius: 0 45px 0 45px; }
-    .science-decisions ol { display: grid; grid-template-columns: 1fr; gap: 22px; margin-top: 30px; }
-    .science-decisions li { padding-left: 18px; }
-    .science-decisions li>b { margin-bottom: 8px; }
-}
-
 /* Clinical research follows the compact editorial list used in the Figma layout. */
 .science-clinical > div > p + p { margin-top: 0; }
 .science-clinical-list { margin-top: .84vw; }
@@ -102,3 +70,42 @@
     .science-clinical-list p { font-size: 12px; line-height: 19.5px; }
 }
 
+.science-manufacturing{margin-top:.55vw;padding:2.7vw 2.9vw 1.1vw 0}.science-manufacturing>header{display:grid;grid-template-columns:40% 60%;align-items:center;margin:0 0 2vw 5.2vw}.science-manufacturing>header h2{margin:0}.science-manufacturing-grid{display:grid;grid-template-columns:40% 1fr;gap:2vw}.science-manufacturing-photo{overflow:hidden;position:relative;min-height:39.3vw}.science-manufacturing-photo>img{position:absolute;height:100%;width:178%;max-width:none;left:-78%;object-fit:cover}.science-capabilities.science-accordion{margin:0;padding:0;counter-reset:capability}.science-capabilities.science-accordion article{border-radius:8px;box-shadow:0 1px 2px #0004;margin:0 0 1.4vw;padding:1vw 1.65vw;counter-increment:capability}.science-capabilities.science-accordion button{font-family:"dharma-gothic-e",sans-serif;font-size:clamp(26px,2.5vw,44px);font-weight:600;color:#4d2e1d;line-height:1}.science-capabilities button:before{content:counter(capability,decimal-leading-zero);font-family:Arial,sans-serif;font-size:clamp(22px,2.64vw,42px);font-weight:700;color:transparent;-webkit-text-stroke:1px #4d2e1d;margin-right:1.8vw}.science-capabilities button span{flex:1}.science-capabilities.science-accordion .science-accordion__copy p{white-space:pre-line;padding-left:4.9vw;font-size:clamp(13px,1.12vw,20px);line-height:1.5}.science-quality{position:relative;isolation:isolate;display:grid;grid-template-columns:55% 1fr;gap:12%;align-items:center;min-height:44vw;padding:7vw 4.6vw 7vw 3.05vw;overflow:hidden}.science-quality-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}.science-quality-accordion.science-accordion article{background:white;margin-bottom:.7vw}.science-quality-heading{background:#fff5efd9;padding:3vw 1.5vw;position:relative}.science-quality-heading h2{font-size:clamp(30px,3.47vw,60px)}.science-quality-heading p{font-size:clamp(17px,1.74vw,28px);line-height:1.64}.science-ingredient-research{position:relative;isolation:isolate;overflow:hidden;min-height:45.3vw;margin-top:2.5vw;display:flex;align-items:center;justify-content:flex-end;padding:7vw 6.8vw}.science-ingredient-research>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}.science-ingredient-research>div{width:55%;background:white;padding:2.3vw 4.1vw;box-shadow:0 2px 11px 2px #0004}.science-ingredient-research p+p{margin-top:1.5em}.science-trace{margin-bottom:5vw}.science-intro{margin-top:6.6vw}.science-intro-copy{padding-top:4vw}.science-lenses h3{font-size:clamp(12px,.91vw,18px)}
+@media(max-width:760px){.science-intro{margin-top:30px}.science-manufacturing{padding:30px 24px}.science-manufacturing>header{display:block;margin:0 0 25px}.science-manufacturing>header h2{margin-bottom:16px}.science-manufacturing-grid{grid-template-columns:1fr;gap:24px}.science-manufacturing-photo{min-height:70vw}.science-capabilities.science-accordion article{padding:16px;margin-bottom:14px}.science-capabilities.science-accordion button{font-size:28px}.science-capabilities button:before{font-size:24px;margin-right:18px}.science-capabilities.science-accordion .science-accordion__copy p{padding-left:0;font-size:14px}.science-quality{grid-template-columns:1fr;gap:24px;padding:35px 24px}.science-quality-heading{grid-row:1;padding:24px}.science-quality-heading p{font-size:18px}.science-ingredient-research{padding:80px 24px 35px;min-height:0}.science-ingredient-research>div{width:100%;padding:28px 24px}.science-ingredient-research>img{object-position:35% center}.science-trace{margin-bottom:35px}}
+
+/* Capability and quality method lists follow the supplied content reference. */
+.science-capabilities.science-accordion button { font-weight: 400; }
+.science-manufacturing h2, .science-quality h2 { font-weight: 500; }
+.science-capabilities .science-method-line { display: block; position: relative; padding-left: 15px; white-space: normal; }
+.science-capabilities .science-method-line::before { content: ""; position: absolute; left: 0; top: .5em; width: 7px; height: 7px; border: 2px solid currentColor; border-radius: 50%; }
+.science-quality-accordion .science-method-line::before { background: currentColor; }
+.science-capabilities .science-method-line strong { font-weight: 600; }
+
+/* Translucent left-pointing panel from the Science reference. */
+.science-quality-heading {
+    isolation: isolate;
+    background: transparent;
+    min-height: 25.5vw;
+    padding: 5.5vw 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.science-quality-heading::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 -4.6vw 0 -8.5vw;
+    background: rgba(255, 255, 255, .82);
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+}
+@media (max-width: 760px) {
+    .science-quality-heading {
+        min-height: 240px;
+        padding: 36px 20px 36px 64px;
+    }
+    .science-quality-heading::before {
+        inset: 0 -24px 0 0;
+        clip-path: polygon(12% 0, 100% 0, 100% 100%, 12% 100%, 0 50%);
+    }
+}
