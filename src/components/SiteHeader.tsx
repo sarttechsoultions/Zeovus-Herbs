@@ -3,7 +3,7 @@
 import Link from "next/link";
 import ArrowIcon from "./ArrowIcon";
 import "./site-header.css";
-import { useState, Suspense } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { usePathname } from "next/navigation";
 import {IngredientMenu} from "./IngredientMenu";
 import {SiteImage} from "./SiteImage";
@@ -24,6 +24,15 @@ function HeaderNav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: 
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(()=>{
+    if(!menuOpen)return;
+    const media=window.matchMedia('(max-width:760px)');
+    const body=document.body,html=document.documentElement;
+    const previous={body:body.style.overflow,html:html.style.overflow};
+    const sync=()=>{body.style.overflow=media.matches?'hidden':previous.body;html.style.overflow=media.matches?'hidden':previous.html;};
+    sync();media.addEventListener('change',sync);
+    return()=>{media.removeEventListener('change',sync);body.style.overflow=previous.body;html.style.overflow=previous.html;};
+  },[menuOpen]);
   return <header className="site-header">
     <div className="site-header__top">
       <div className="site-header__brand"> <HeaderImage src="logo.png" alt="Zeovus Herbs" /><span>Plants with<br />purpose</span></div>

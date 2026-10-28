@@ -1,0 +1,28 @@
+.policy-page{background:#fff;color:#465043}
+.policy-page .policy-hero nav,.policy-page .policy-sidebar nav{position:static;width:auto;height:auto;min-height:0;background:transparent;box-shadow:none;border:0;padding:0;justify-content:flex-start;align-items:stretch;overflow:visible}
+.policy-page .policy-hero nav a,.policy-page .policy-sidebar nav a{margin:0;flex:none;white-space:normal;min-height:0;height:auto}
+.policy-page .policy-hero nav a,.policy-page .policy-contents nav a{padding:0}
+.policy-hero{background:#f8f7f2;border-bottom:1px solid #e7e5dc;padding:36px max(24px,6vw) 38px}
+.policy-hero>div{max-width:1200px;margin:auto}
+.policy-hero nav{display:flex;gap:12px;font:13px/1.5 Arial,sans-serif;color:#7b8174;margin-bottom:20px}
+.policy-hero a{color:#38623e;text-decoration:none}
+.policy-hero h1{font-size:clamp(36px,4vw,54px);line-height:1.15;color:#55341f;margin:0 0 14px}
+.policy-hero p{font:13px/1.5 Arial,sans-serif;color:#7b8174;margin:0}
+.policy-layout{display:grid;grid-template-columns:250px minmax(0,800px);gap:64px;max-width:1200px;margin:auto;padding:48px 24px 80px;align-items:start}
+.policy-sidebar{position:sticky;top:150px;max-height:calc(100dvh - 175px);overflow-y:auto;scrollbar-width:thin}
+.policy-contents-title{font:600 13px/1.5 Arial,sans-serif;color:#55341f;padding:22px 0 14px;margin:0}
+.policy-contents nav{display:grid;gap:12px;padding:0 8px 16px 0}
+.policy-contents a{font:12px/1.6 Arial,sans-serif;text-decoration:none;color:#75806b}
+.policy-contents a:hover{color:#38623e;text-decoration:underline}
+.policy-copy{font:15px/1.85 Arial,sans-serif;min-width:0}
+.policy-copy h2{font:600 23px/1.4 Arial,sans-serif;color:#55341f;margin:40px 0 18px;scroll-margin-top:170px}
+.policy-copy h2:first-child{margin-top:0}
+.policy-copy h3{font:600 17px/1.5 Arial,sans-serif;color:#38623e;margin:28px 0 12px}
+.policy-copy p{margin:0 0 16px;white-space:pre-line;overflow-wrap:anywhere}
+.policy-copy ul{padding-left:22px;margin:0 0 20px;list-style:disc}
+.policy-copy li{padding-left:5px;margin:7px 0}
+.policy-copy a{color:#38623e;text-underline-offset:3px}
+.policy-page a:focus-visible{outline:2px solid #38623e;outline-offset:4px}
+.site-footer__legal a{display:inline-block;text-underline-offset:4px}
+.site-footer__legal a:hover{text-decoration:underline}
+@media(max-width:760px){.policy-hero{padding:26px 22px 28px}.policy-layout{grid-template-columns:minmax(0,1fr);gap:28px;padding:24px 22px 48px}.policy-sidebar{position:static;max-height:none}.policy-contents nav{max-height:170px;overflow-y:auto;grid-template-columns:1fr 1fr;gap:10px 18px}.policy-contents-title{padding:16px 0 10px}.policy-copy{font-size:14px;line-height:1.85}.policy-copy h2{font-size:21px;scroll-margin-top:90px}.site-footer__legal{display:flex;flex-wrap:wrap;gap:8px;right:24px}}

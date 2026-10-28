@@ -37,3 +37,21 @@
   .ingredient-catalogue .product-card { padding: 12px; }
   .ingredient-catalogue .product-card h2 { margin-top: 15px; }
 }
+
+/* A balanced, self-contained filter toolbar. Selections apply immediately. */
+.ingredient-catalogue .ingredient-filters form{display:grid;grid-template-columns:minmax(200px,1fr) repeat(2,minmax(200px,300px)) auto;align-items:center;gap:24px;padding:20px 24px;background:#fff;border:1px solid #e1e5db;border-radius:12px;box-shadow:0 3px 12px #31452905}
+.ingredient-filter-intro{display:flex;gap:14px;align-items:center;color:#38623e;min-width:0}
+.ingredient-filter-intro>svg{flex-shrink:0}
+.ingredient-filter-intro>div{display:grid;gap:5px}
+.ingredient-filter-intro strong{font:600 14px/1.4 Arial,sans-serif;color:#334b31}
+.ingredient-filter-intro span{font:400 12px/1.4 Arial,sans-serif;color:#8a8e81}
+.ingredient-catalogue .ingredient-filters form label{width:100%;gap:6px;font-size:10px;letter-spacing:.08em;color:#798471}
+.ingredient-catalogue .ingredient-filters form select{height:46px;background-color:#fafbf8;border-color:#e0e5d8;border-radius:7px;font-size:13px;color:#3e5136;transition:border-color .15s,box-shadow .15s}
+.ingredient-catalogue .ingredient-filters form select:hover{border-color:#9dad92}
+.ingredient-catalogue .ingredient-filters form select:focus-visible{outline:0;border-color:#38623e;box-shadow:0 0 0 3px #38623e15}
+.ingredient-catalogue .ingredient-filters form .ingredient-filter-reset{display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;color:#7b8373;font-size:12px;padding:12px 0;margin-top:20px}
+.ingredient-catalogue .ingredient-filters form .ingredient-filter-reset:hover{color:#38623e}
+.ingredient-catalogue .product-category:not(.ingredient-results){padding-top:30px}
+.ingredient-catalogue .product-category>h1{margin-bottom:26px!important}
+@media(max-width:1100px){.ingredient-catalogue .ingredient-filters form{grid-template-columns:1fr 1fr;gap:18px;padding:20px}.ingredient-filter-intro{grid-column:1/-1}.ingredient-catalogue .ingredient-filters form .ingredient-filter-reset{grid-column:1/-1;justify-content:flex-start;margin-top:0;padding:0}}
+@media(max-width:600px){.ingredient-catalogue .ingredient-filters form{grid-template-columns:1fr;gap:16px;padding:18px}.ingredient-filter-intro{padding-bottom:14px;border-bottom:1px solid #edf0e7}.ingredient-filter-intro strong{font-size:14px}.ingredient-catalogue .ingredient-filters form select{font-size:14px;height:46px}.ingredient-catalogue .ingredient-filters form .ingredient-filter-reset{padding-top:2px}}
