@@ -1,6 +1,8 @@
+import JsonLoader from "@/components/JsonLoader";
 import { SiteHeader } from "../../components/SiteHeader";
 import { HomeFooter } from "../../components/home/HomeFooter";
-import ProductCatalogue from "./ProductCatalogue";
+import ProductCatalogue from "./IngredientCatalogue";
+import {Suspense} from "react";
 import "./products.css";
-export const metadata={title:"Products | Zeovus Herbs",description:"Explore our Indian botanical extracts, collagen and gelatin, and prebiotic ingredient catalogues."};
-export default function ProductsPage(){return <main className="products-page"><SiteHeader/><ProductCatalogue/><HomeFooter/></main>}
+export const metadata={title:"Ingredients | Zeovus Herbs",description:"Explore botanical extracts, proteins, prebiotics, probiotics, postbiotics and collagen peptides by category and application."};
+export default function ProductsPage(){return <main className="products-page"><SiteHeader/><Suspense fallback={<JsonLoader label="Loading ingredients…"/>}><ProductCatalogue/></Suspense><HomeFooter/></main>}

@@ -204,12 +204,6 @@
 .home-page .ingredient-mark{position:static;width:auto;height:auto;object-fit:contain;flex-shrink:0;transform:none}
 .home-page .ingredient-card__overlay{background:linear-gradient(180deg,transparent 60%,#432410bb 100%)}
 @media(min-width:761px){
-.home-page .site-header__top{height:6.18vw;padding-inline:3.54vw}
-.home-page .site-header__brand img{width:8.26vw;height:3.54vw}
-.home-page .site-header__brand span{font-size:.9vw;line-height:1.1vw}
-.home-page .site-header__nav{height:2.64vw;padding-inline:3.54vw;font-size:.9vw}
-.home-page .site-header__nav a,.home-page .site-header__nav .site-header__voices{height:2.64vw;font-size:.9vw}
-.home-page .site-header__contact{min-width:10.83vw!important}
 .home-page .markets .market-image{position:relative;overflow:hidden}
 .home-page .markets .market-image img{position:absolute;width:71.11vw;height:47.36vw;max-width:none;left:-4.86vw;top:-8.19vw;object-fit:cover}
 .home-page .markets article:nth-child(2) .market-image img{left:-7.57vw;top:-7.43vw}

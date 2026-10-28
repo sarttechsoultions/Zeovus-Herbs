@@ -1,0 +1,93 @@
+/* The same header dimensions and typography apply on every public route. */
+header.site-header {
+  --header-side-space: 40px;
+  --header-top-height: 77px;
+  --header-nav-height: 29px;
+  --header-nav-font: 13px;
+  --header-nav-padding: 20px;
+  font: 400 13px/1.4 Arial, sans-serif;
+  color: #64301b;
+  letter-spacing: normal;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  caret-color: transparent;
+}
+header.site-header a,
+header.site-header button,
+header.site-header summary { cursor: pointer; }
+header.site-header .site-header__brand img { -webkit-user-drag: none; }
+header.site-header .site-header__nav > div > a:not(.site-header__contact),
+header.site-header .ingredient-menu__trigger { transition: color 160ms ease, background-color 160ms ease; }
+header.site-header .site-header__nav > div > a:not(.site-header__contact):hover,
+header.site-header .ingredient-menu__trigger:hover { color: #38623e; background-color: #e2e7dc; }
+header.site-header a:focus-visible,
+header.site-header button:focus-visible,
+header.site-header summary:focus-visible { outline: 2px solid #38623e; outline-offset: -3px; }
+header.site-header .site-header__top {
+  height: var(--header-top-height);
+  padding-inline: var(--header-side-space);
+}
+header.site-header .site-header__nav {
+  height: var(--header-nav-height);
+  padding-inline: var(--header-side-space);
+  font: 600 var(--header-nav-font)/1.4 Arial, sans-serif;
+  overflow: visible;
+}
+header.site-header .site-header__nav > div { gap: 15px; }
+header.site-header .site-header__nav > div > a,
+header.site-header .site-header__nav > div > .site-header__voices,
+header.site-header .site-header__nav .ingredient-menu__trigger {
+  height: var(--header-nav-height);
+  padding: 0 var(--header-nav-padding);
+  font: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+}
+header.site-header .site-header__nav > div:first-child > a:first-child { padding-left: 0; }
+header.site-header .site-header__nav > div > .site-header__voices { font-weight: 400; }
+header.site-header .site-header__nav > div > .site-header__contact {
+  min-width: 156px;
+  margin: 0;
+  padding-inline: 24px;
+  font-weight: 600;
+}
+header.site-header .site-header__contact > .ui-arrow-icon,
+header.site-header .site-header__mobile-contact > .ui-arrow-icon { width: 22px; height: 22px; }
+header.site-header .site-header__search { display: flex; align-items: center; justify-content: space-between; }
+header.site-header .site-header__search svg { width: 20px; height: 20px; flex-shrink: 0; }
+header.site-header .ingredient-menu__trigger > .ui-chevron-icon { width: 16px; height: 16px; }
+header.site-header .ingredient-menu__panel { font: 400 14px/1.5 Arial, sans-serif; }
+header.site-header .ingredient-menu__category > .ui-arrow-icon,
+header.site-header .ingredient-menu__top .ui-arrow-icon,
+header.site-header .ingredient-menu__all .ui-arrow-icon { width: 18px; height: 18px; }
+header.site-header .ingredient-menu__group summary { align-items: center; gap: 12px; }
+
+@media (min-width: 981px) {
+  header.site-header {
+    --header-side-space: 3.54vw;
+    --header-top-height: clamp(70px, 4.1vw, 82px);
+    --header-nav-height: 40px;
+    --header-nav-font: clamp(12px, .75vw, 14px);
+    --header-nav-padding: clamp(14px, 1.1vw, 21px);
+  }
+  header.site-header .site-header__brand { height: 48px; }
+  header.site-header .site-header__brand img { width: 112px; height: 48px; }
+  header.site-header .site-header__brand span { margin-left: 14px; padding-left: 14px; font: 400 12px/15px Arial, sans-serif; }
+  header.site-header .site-header__search { width: clamp(220px, 16vw, 290px); height: 30px; font: 400 16px/1.4 Georgia, serif; }
+  header.site-header .site-header__nav > div { gap: 10px; }
+  header.site-header .site-header__nav > div > .site-header__contact { min-width: 160px; padding-inline: 24px; }
+}
+@media (min-width: 761px) and (max-width: 980px) {
+  header.site-header { --header-side-space: 20px; --header-top-height: 74px; --header-nav-padding: 13px; }
+  header.site-header .site-header__nav > div { gap: 0; }
+  header.site-header .site-header__nav > div > .site-header__voices { display: none; }
+}
+@media (max-width: 760px) {
+  header.site-header { --header-side-space: 22px; --header-top-height: 70px; }
+  header.site-header .site-header__brand { height: 42px; }
+  header.site-header .site-header__brand img { width: 82px; height: 42px; }
+  header.site-header .site-header__brand span { margin-left: 11px; padding-left: 10px; font: 400 12px/12px Arial, sans-serif; }
+  header.site-header .site-header__search { display: none; }
+  header.site-header .ingredient-menu--mobile .ingredient-menu__trigger { font: 600 13px/1.4 Arial, sans-serif; }
+}

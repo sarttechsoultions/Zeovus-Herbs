@@ -1,0 +1,39 @@
+.ingredient-catalogue { background: #fff; }
+.ingredient-catalogue .ingredient-filters { padding: 30px 4.1% 22px; background: #faf9f5; border-bottom: 1px solid #e9e5dc; }
+.ingredient-heading { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-bottom: 24px; }
+.ingredient-breadcrumb { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 12px; color: #89877e; font: 12px/1.5 Arial,sans-serif; }
+.ingredient-breadcrumb a { color: #53694b; text-decoration: none; }
+.ingredient-breadcrumb a:hover { text-decoration: underline; }
+.ingredient-catalogue .ingredient-filters h1 { font-size: clamp(36px,3.1vw,52px)!important; line-height: 1!important; margin: 0 0 12px; color: #4d2e1d; }
+.ingredient-heading p { margin: 0; font: 14px/1.6 Arial,sans-serif; color: #73766a; }
+.ingredient-heading-note { border-left: 1px solid #d8dece; padding: 7px 0 7px 22px; color: #6d7b61; font: 14px/1.6 Georgia,serif; }
+.ingredient-catalogue .ingredient-filters form { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid #e5e4dc; }
+.ingredient-catalogue .ingredient-filters label { min-width: 0; width: min(260px,25%); gap: 7px; font: 600 11px/1.4 Arial,sans-serif; color: #7b7b70; letter-spacing: .05em; text-transform: uppercase; }
+.ingredient-catalogue .ingredient-filters select { width: 100%; height: 44px; border: 1px solid #dcded2; border-radius: 7px; padding: 10px 32px 10px 13px; color: #384b31; font: 400 13px/1.4 Arial,sans-serif; letter-spacing: normal; text-transform: none; background-color: #fff; cursor: pointer; }
+.ingredient-catalogue .ingredient-filters button { height: 44px; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 0 20px; background: #38623e; border-radius: 7px; font: 600 13px/1.4 Arial,sans-serif; }
+.ingredient-catalogue .ingredient-filters button:hover { background: #294c2e; }
+.ingredient-catalogue .ingredient-filters form > a { padding: 12px 8px; font: 400 12px/1.5 Arial,sans-serif; color: #7c7b70; text-decoration: none; }
+.ingredient-catalogue .ingredient-filters form > a:hover { color: #38623e; text-decoration: underline; }
+.ingredient-catalogue .ingredient-selected-filter { font-size: 12px; margin-top: 14px!important; }
+.ingredient-catalogue .ingredient-results { padding: 22px 4.1% 40px; background: #fff; }
+.ingredient-results-bar { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 18px; font: 12px/1.5 Arial,sans-serif; color: #8a8d80; }
+.ingredient-results-bar .ingredient-result-count { text-align: left; margin: 0; color: #72776b; }
+.ingredient-result-count strong { font-weight: 600; color: #3b5135; }
+.ingredient-catalogue .product-card { padding: 18px; border-radius: 12px; background: #fafaf6; border-color: #e8e9e0; }
+.ingredient-catalogue .product-photo { height: auto; aspect-ratio: 4/3; border-radius: 8px; background: #f1f2eb; }
+.ingredient-catalogue .product-card h2 { font-size: clamp(17px,1.3vw,23px)!important; margin: 20px 0 10px; color: #34442e; }
+.ingredient-catalogue .product-card > p { font: 13px/1.65 Arial,sans-serif; color: #72766b; margin-bottom: 20px; }
+.ingredient-catalogue .product-detail-link { font: 600 11px/1.5 Arial,sans-serif; letter-spacing: .04em; color: #4b623e; padding-top: 14px; border-top: 1px solid #e4e7da; width: 100%; justify-content: space-between; }
+@media(max-width:760px) {
+  .ingredient-catalogue .ingredient-filters { padding: 24px 20px 20px; }
+  .ingredient-heading { margin-bottom: 20px; }
+  .ingredient-heading-note { display: none; }
+  .ingredient-heading p { font-size: 13px; }
+  .ingredient-catalogue .ingredient-filters form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 10px; }
+  .ingredient-catalogue .ingredient-filters label { width: 100%; }
+  .ingredient-catalogue .ingredient-filters select { font-size: 12px; }
+  .ingredient-catalogue .ingredient-results { padding: 18px 20px 30px; }
+  .ingredient-results-bar > span { display: none; }
+  .ingredient-catalogue .product-card { padding: 12px; }
+  .ingredient-catalogue .product-card h2 { margin-top: 15px; }
+}

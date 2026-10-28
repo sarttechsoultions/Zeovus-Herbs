@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* Show a typing caret only in fields that actually accept text. */
+html body, html body * {
+    caret-color: transparent !important;
+    -webkit-user-select: none;
+    user-select: none;
+}
+html body input, html body textarea,
+html body [contenteditable=""], html body [contenteditable="true"],
+html body [contenteditable="plaintext-only"],
+html body [contenteditable="true"] *, html body [contenteditable="plaintext-only"] * {
+    caret-color: auto !important;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
 .purpose {
     height: 647px !important;
     grid-template-columns: 743px 697px !important;
@@ -2195,16 +2210,16 @@ h1, h2, h3, h4, h5, h6,
 
 /* Desktop viewport scale: at browser zoom-out, content and type scale with the images. */
 @media (min-width: 981px) {
-    .site-header { --header-side-space: 5vw; }
-    .site-header__top { height: 5.35vw; padding-inline: var(--header-side-space); }
-    .site-header__brand { height: 2.9vw; }
-    .site-header__brand img { width: 5.7vw; height: 2.9vw; }
-    .site-header__brand span { margin-left: .75vw; padding-left: .7vw; font-size: .72vw; line-height: .72vw; }
+    .site-header { --header-side-space: 3.54vw; }
+    .site-header__top { height: 6.18vw; padding-inline: var(--header-side-space); }
+    .site-header__brand { height: 3.54vw; }
+    .site-header__brand img { width: 8.26vw; height: 3.54vw; }
+    .site-header__brand span { margin-left: .75vw; padding-left: .7vw; font-size: .9vw; line-height: 1.1vw; }
     .site-header__search { width: 16.7vw; height: 2vw; font-size: 1.1vw; }
-    .site-header__nav { height: 2vw; padding-inline: var(--header-side-space); font-size: .7vw; }
-    .site-header__nav a, .site-header__nav .site-header__voices { height: 2vw; padding-inline: 1.4vw; }
+    .site-header__nav { height: 2.64vw; padding-inline: var(--header-side-space); font-size: .9vw; }
+    .site-header__nav a, .site-header__nav .site-header__voices { height: 2.64vw; padding-inline: 1.4vw; }
     .site-header__nav > div:first-child > a:first-child { padding-left: 0; }
-    .site-header__nav .site-header__contact { min-width: 10.8vw; margin-right: 0; font-size: .75vw; padding-inline: 1.65vw; }
+    .site-header__nav .site-header__contact { min-width: 10.83vw; margin-right: 0; font-size: .9vw; padding-inline: 1.65vw; }
     .site-header__contact b { font-size: 1vw; }
 
     .hero { height: clamp(490px, 75svh, 570px); min-height: 0; border-radius: 0 0 0 8.5vw; }

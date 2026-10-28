@@ -1,9 +1,15 @@
 "use client";
+import JsonLoader from "@/components/JsonLoader";
+
 import ArrowIcon from "@/components/ArrowIcon";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type Product = {
+  commonName?:string;
+  standardization?:string;
+  plantPartUsed?:string;
+  benefits?:string[];
   name: string;
   images: { url: string; alt: string }[];
   description: string[];
@@ -45,7 +51,7 @@ function DetailDropdownCard({
           </svg>
         </span>
       </button>
-      <div className={`detail-card-body ${isOpen ? "open" : ""}`} id={`content-${id}`}>
+      <div className={`detail-card-body ${isOpen ? "open" : ""}`} id={`content-${id}`} inert={!isOpen}>
         <div className="detail-card-inner">
           <div className="detail-card-content">
             {children}
@@ -57,6 +63,9 @@ function DetailDropdownCard({
 }
 
 export default function LiveProductDetail({ slug }: { slug: string }) {
+  return <ProductDetail key={slug} slug={slug}/>;
+}
+function ProductDetail({ slug }: { slug: string }) {
   const [product, setProduct] = useState<Product | null>(null);
   const [error, setError] = useState("");
   const [active, setActive] = useState(0);
@@ -80,11 +89,6 @@ export default function LiveProductDetail({ slug }: { slug: string }) {
 
   useEffect(() => {
     const abort = new AbortController();
-    setError("");
-    setProduct(null);
-    setActive(0);
-    setOpenSections({});
-    setOpenStudies({});
     fetch("/api/catalogue/" + encodeURIComponent(slug), { signal: abort.signal })
       .then(async (response) => {
         if (!response.headers.get("content-type")?.includes("application/json")) {
@@ -106,10 +110,10 @@ export default function LiveProductDetail({ slug }: { slug: string }) {
     return (
       <div className="detail-body">
         <p role="alert">{error}</p>
-        <button onClick={() => setRetry(retry + 1)}>Retry</button>
+        <button onClick={() => {setError('');setRetry(retry + 1);}}>Retry</button>
         <Link href="/products">
           {" "}
-          <ArrowIcon direction="left" /> Back to products
+          <ArrowIcon direction="left" /> Back to ingredients
         </Link>
       </div>
     );
@@ -117,9 +121,7 @@ export default function LiveProductDetail({ slug }: { slug: string }) {
 
   if (!product) {
     return (
-      <p className="detail-body" role="status">
-        Loading product details…
-      </p>
+      <JsonLoader label="Loading ingredient details…"/>
     );
   }
 
@@ -128,15 +130,15 @@ export default function LiveProductDetail({ slug }: { slug: string }) {
   return (
     <div className="detail-body">
       <Link className="detail-back" href="/products">
-        <ArrowIcon direction="left" /> Back to Products
+        <ArrowIcon direction="left" /> Back to Ingredients
       </Link>
       <div className="detail-layout">
         <aside className="detail-gallery">
           <div className="detail-main-photo">
-            <img src={image?.url || "/file.svg"} alt={image?.alt || product.name} />
+            {image?.url&&image.url!=="/file.svg"?<img src={image.url} alt={image.alt||product.name}/>:<div className="ingredient-image-pending"><span aria-hidden="true">❧</span><span>{product.name}</span><small>Ingredient image coming soon</small></div>}
           </div>
           <div className="detail-thumbnails">
-            {product.images.map((img, i) => (
+            {product.images.map((img, i) => img.url!=="/file.svg"&&(
               <button
                 key={i}
                 onClick={() => setActive(i)}
@@ -150,15 +152,18 @@ export default function LiveProductDetail({ slug }: { slug: string }) {
         </aside>
 
         <div className="detail-information">
-          <h1 className="live-product-title">{product.name}</h1>
+          <div className="ingredient-detail-title"><h1 className="live-product-title">{product.name}</h1>{product.commonName&&<span>{product.commonName}</span>}</div>
 
-          <section className="detail-card detail-card-static">
-            <h2>Product Description</h2>
+          <section className="detail-card detail-card-static ingredient-description">
+            <h2>Description</h2>
             {product.description.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </section>
 
+          {product.standardization&&<section className="detail-card detail-card-static ingredient-spec"><h2>Standardization</h2><p>{product.standardization}</p></section>}
+          {product.plantPartUsed&&<section className="detail-card detail-card-static ingredient-spec"><h2>Plant Part Used</h2><p>{product.plantPartUsed}</p></section>}
+          {!!product.benefits?.length&&<DetailDropdownCard id="benefits" title="Benefits" isOpen={!!openSections.benefits} onToggle={()=>toggleSection('benefits')}><ul className="ingredient-benefits">{product.benefits.map((benefit,i)=><li key={i}>{benefit}</li>)}</ul></DetailDropdownCard>}
           {product.applications.length > 0 && (
             <DetailDropdownCard
               id="applications"
@@ -176,7 +181,7 @@ export default function LiveProductDetail({ slug }: { slug: string }) {
             </DetailDropdownCard>
           )}
 
-          {product.technicalSpecifications.rows.length > 0 && (
+          {!product.standardization && product.technicalSpecifications.rows.length > 0 && (
             <DetailDropdownCard
               id="tech-specs"
               title="Technical Specifications & Available Grades"
@@ -208,7 +213,7 @@ export default function LiveProductDetail({ slug }: { slug: string }) {
             </DetailDropdownCard>
           )}
 
-          {product.sourceAndOrigin.length > 0 && (
+          {!product.plantPartUsed && product.sourceAndOrigin.length > 0 && (
             <DetailDropdownCard
               id="source-origin"
               title="Source & Origin"
@@ -267,8 +272,7 @@ export default function LiveProductDetail({ slug }: { slug: string }) {
           )}
 
           {product.clinicalEvidence.length > 0 && (
-            <section className="detail-card detail-card-static">
-              <h2>Clinical Evidence</h2>
+            <DetailDropdownCard id="clinical-studies" title="Clinical Studies" isOpen={!!openSections.clinicalStudies} onToggle={()=>toggleSection('clinicalStudies')}>
               <div className="detail-studies">
                 {product.clinicalEvidence.map((s, i) => {
                   const isStudyOpen = !!openStudies[i];
@@ -306,7 +310,7 @@ export default function LiveProductDetail({ slug }: { slug: string }) {
                   );
                 })}
               </div>
-            </section>
+            </DetailDropdownCard>
           )}
 
           {product.technicalSourceIds.length > 0 && (
