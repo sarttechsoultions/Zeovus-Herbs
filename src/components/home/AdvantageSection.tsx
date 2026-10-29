@@ -14,7 +14,7 @@ const accordionRows = [
 
 export function AdvantageSection() {
   const [active, setActive] = useState<number | null>(null);
-  return <section className="advantage"><div className="advantage-photo"><HomeImage src="/home-assets/imgIstockphoto13715169481024X10241.png" alt="Harvesting grain" /></div><div className="adv-copy"><h2>The Zeovus Advantage</h2><p>As part of the Zeovus Group, Zeovus Herbs brings a broader perspective to ingredient sourcing and supply. Our experience across health, nutrition, beauty and food helps us understand what formulators and manufacturers need to turn functional ingredients into exceptional products.</p><div className="accordion">{accordionRows.map(({ heading, detail }, index) => {
+  return <section className="advantage"><div className="advantage-photo"><HomeImage src="/home-assets/pexels-photo-8851410.jpg" alt="Harvesting grain" /></div><div className="adv-copy"><h2>The Zeovus Advantage</h2><p>As part of the Zeovus Group, Zeovus Herbs brings a broader perspective to ingredient sourcing and supply. Our experience across health, nutrition, beauty and food helps us understand what formulators and manufacturers need to turn functional ingredients into exceptional products.</p><div className="accordion">{accordionRows.map(({ heading, detail }, index) => {
     const isOpen = active === index;
     return <button type="button" key={heading} aria-expanded={isOpen} onClick={() => setActive(isOpen ? null : index)} className={isOpen ? "is-open" : ""}><span>{heading}</span><b aria-hidden="true">{isOpen ? "×" : "+"}</b><em aria-hidden={!isOpen}>{detail}</em></button>;
   })}</div></div></section>;

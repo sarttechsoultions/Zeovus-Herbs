@@ -1,7 +1,48 @@
 import { HomeButton, HomeImage } from "./shared";
 
-const marketCards = [["/home-assets/imgIstockphoto22427978311024X10241.png", "Indian ingredient greenhouse", "Taking Indian Ingredients Global", "From proteins and peptides to plant compounds and fermentation-derived ingredients, we connect India’s ingredient capabilities with international markets.", "Our sourcing knowledge and application understanding help brands, formulators and distributors identify materials suited to their products and business needs.", "Explore Ingredients", false], ["/home-assets/imgIstockphoto13009353531024X10241.png", "Green field", "Bringing Global Ingredient Expertise to India", "We partner with international ingredient and research organisations looking to establish or expand their presence in India.", "Our understanding of the local health, nutrition and food sectors helps connect new ingredients and technologies with relevant manufacturers, brands and formulation opportunities.", "Partner With Us", true]] as const;
+const marketCards = [
+  [
+    "/home-assets/pexels-photo-19911960.jpg",
+    "Indian ingredient greenhouse",
+    "Taking Indian Ingredients Global",
+    "From proteins and peptides to plant compounds and fermentation-derived ingredients, we connect India’s ingredient capabilities with international markets.",
+    "Our sourcing knowledge and application understanding help brands, formulators and distributors identify materials suited to their products and business needs.",
+    "Explore Ingredients",
+    false,
+  ],
+  [
+    "/home-assets/pexels-photo-10098073.jpg",
+    "Green field",
+    "Bringing Global Ingredient Expertise to India",
+    "We partner with international ingredient and research organisations looking to establish or expand their presence in India.",
+    "Our understanding of the local health, nutrition and food sectors helps connect new ingredients and technologies with relevant manufacturers, brands and formulation opportunities.",
+    "Partner With Us",
+    true,
+  ],
+] as const;
 
 export function MarketSection() {
-  return <section className="markets">{marketCards.map(([src, alt, title, lineOne, lineTwo, cta, outline]) => <article key={title}><div className="market-image"><HomeImage src={src} alt={alt} /></div><div><h2>{title}</h2><p>{lineOne} {lineTwo}</p><HomeButton href={outline ? "/contact" : "/products"} outline={outline}>{cta}</HomeButton></div></article>)}</section>;
+  return (
+    <section className="markets">
+      {marketCards.map(([src, alt, title, lineOne, lineTwo, cta, outline]) => (
+        <article key={title}>
+          <div className="market-image">
+            <HomeImage src={src} alt={alt} />
+          </div>
+          <div>
+            <h2>{title}</h2>
+            <p>
+              {lineOne} {lineTwo}
+            </p>
+            <HomeButton
+              href={outline ? "/contact" : "/products"}
+              outline={outline}
+            >
+              {cta}
+            </HomeButton>
+          </div>
+        </article>
+      ))}
+    </section>
+  );
 }

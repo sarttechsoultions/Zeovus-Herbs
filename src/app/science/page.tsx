@@ -127,8 +127,8 @@ export default function SciencePage() {
           <div className="science-manufacturing-grid">
             <div className="science-manufacturing-photo">
               <SiteImage
-                src={assets + "manufacturing-tea.png"}
-                alt="Harvesting tea plants on a hillside plantation"
+                src="/home-assets/pexels-photo-5964491.jpg"
+                alt="Ingredient powder being weighed during manufacturing"
               />
             </div>
             <ScienceAccordion
@@ -158,8 +158,8 @@ export default function SciencePage() {
         </section>
         <section className="science-ingredient-research" id="ingredient-research">
           <SiteImage
-            src={assets + "sci.jpeg"}
-            alt="Industrial ingredient manufacturing facility"
+            src="/home-assets/pexels-photo-38305217.jpg"
+            alt="Wind turbines above agricultural fields"
           />
           <div>
             <h2>Ingredient Research</h2>
