@@ -39,7 +39,7 @@
 }
 
 /* A balanced, self-contained filter toolbar. Selections apply immediately. */
-.ingredient-catalogue .ingredient-filters form{display:grid;grid-template-columns:minmax(200px,1fr) repeat(2,minmax(200px,300px)) auto;align-items:center;gap:24px;padding:20px 24px;background:#fff;border:1px solid #e1e5db;border-radius:12px;box-shadow:0 3px 12px #31452905}
+.ingredient-catalogue .ingredient-filters form{display:grid;grid-template-columns:repeat(2,minmax(200px,1fr)) auto;align-items:center;gap:24px;padding:20px 24px;background:#fff;border:1px solid #e1e5db;border-radius:12px;box-shadow:0 3px 12px #31452905}
 .ingredient-filter-intro{display:flex;gap:14px;align-items:center;color:#38623e;min-width:0}
 .ingredient-filter-intro>svg{flex-shrink:0}
 .ingredient-filter-intro>div{display:grid;gap:5px}

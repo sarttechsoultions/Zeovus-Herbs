@@ -1,0 +1,94 @@
+nav.group-brand-strip{height:auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px 30px;padding:30px 4%;background:#f5f3ee;font:inherit}
+nav.group-brand-strip>a{display:flex;align-items:center;justify-content:center;flex:1 1 100px;max-width:150px;padding:6px;min-height:58px}
+.group-brand-strip img{display:block;width:100%;max-width:130px;height:46px;object-fit:contain;filter:brightness(0);opacity:.8;transition:opacity .2s}
+.group-brand-strip a:hover img{opacity:1}
+footer.herbs-footer{grid-template-columns:2fr 1fr 1fr 1.3fr;gap:40px;min-height:0;padding:50px 4%;margin-top:0}
+.herbs-footer .site-footer__brand{max-width:430px}
+.herbs-footer .site-footer__brand>a{color:inherit;text-decoration:none}
+.herbs-footer-offices{display:flex;gap:0;margin:20px 0 12px}
+.herbs-footer-offices a{color:inherit;text-decoration:none;padding:0 12px;border-right:1px solid #ffffff70}
+.herbs-footer-offices a:first-child{padding-left:0}
+.herbs-footer-offices a:last-child{border:0}
+.herbs-footer-voices h3{font:600 17px/1.4 Arial,sans-serif;margin:0 0 18px;color:inherit}
+.herbs-footer-voices p{font:14px/1.7 Arial,sans-serif;margin:0 0 18px;opacity:.85}
+.herbs-footer-voices>a,.herbs-footer-social a{color:inherit;font:14px/1.5 Arial,sans-serif;text-decoration:none}
+.herbs-footer-social{display:flex;flex-wrap:wrap;gap:16px;margin-top:25px}
+.herbs-footer a:hover{text-decoration:underline}
+.herbs-footer a:focus-visible,.group-brand-strip a:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+@media(max-width:1000px){footer.herbs-footer{grid-template-columns:1.5fr 1fr;gap:32px}}
+@media(max-width:600px){nav.group-brand-strip{gap:12px 18px;padding:24px 20px}nav.group-brand-strip>a{flex:0 1 calc(33.33% - 12px)}footer.herbs-footer{grid-template-columns:1fr 1fr;padding:35px 24px}.herbs-footer .site-footer__brand,.herbs-footer-voices{grid-column:1/-1}}
+/* Three-column footer and image signature from the approved sketch. */
+footer.herbs-footer{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr);gap:28px 7%;padding-bottom:24px}
+.herbs-footer .site-footer__brand{grid-column:1;grid-row:1/3;max-width:440px}
+.herbs-footer .site-footer__column{grid-row:1}
+.herbs-footer .site-footer__brand p{font:14px/1.7 Arial,sans-serif;max-width:none}
+.herbs-footer .site-footer__brand img{width:150px;height:auto}
+.herbs-footer .site-footer__column b{font:600 18px/1.4 Arial,sans-serif;text-transform:none;margin-bottom:20px}
+.herbs-footer .site-footer__column a{font:14px/1.6 Arial,sans-serif}
+.herbs-footer .herbs-footer-social{grid-column:3;grid-row:2;align-self:end;margin:0;display:flex;gap:16px}
+.herbs-footer-social a{display:inline-flex;padding:4px}
+.herbs-footer-social svg{width:23px;height:23px}
+.herbs-footer-signature{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.3fr 1fr;align-items:center;gap:5%;border-top:1px solid #ffffff50;padding-top:30px;margin-top:10px}
+.herbs-footer-signature img{width:100%;height:clamp(130px,15vw,240px);object-fit:cover;border-radius:4px}
+.herbs-footer-signature>a{font:500 clamp(40px,6.5vw,110px)/.95 "dharma-gothic-e",Arial,sans-serif;color:inherit;text-align:center;text-decoration:none;letter-spacing:.04em}
+.herbs-footer .site-footer__legal{grid-column:1/-1;margin:0;padding-top:20px}
+@media(max-width:760px){footer.herbs-footer{grid-template-columns:1fr 1fr;gap:30px 20px}.herbs-footer .site-footer__brand{grid-column:1/-1;grid-row:auto}.herbs-footer .site-footer__column{grid-row:auto}.herbs-footer .herbs-footer-social{grid-column:2;grid-row:auto}.herbs-footer-signature{gap:12px;grid-template-columns:1fr 1.2fr 1fr}.herbs-footer-signature img{height:110px}.herbs-footer-signature>a{font-size:clamp(30px,7vw,55px)}}
+/* Group footer layout adapted to the Herbs palette. */
+nav.group-brand-strip{background:#e5eae2;padding:30px max(4%,calc((100% - 1280px)/2));gap:24px}
+footer.herbs-footer{background:#faf5ef;color:#4d2e1d;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.8fr) minmax(0,1.2fr);gap:28px 7%;padding:65px max(4%,calc((100% - 1280px)/2)) 0}
+.herbs-footer .site-footer__brand{grid-row:1;grid-column:1;max-width:none}
+.herbs-footer .site-footer__brand>a:first-child,.herbs-footer .site-footer__brand>i{display:none}
+.herbs-footer .site-footer__brand p{margin:0 0 28px;color:#4d2e1d;font:14px/1.7 Arial,sans-serif}
+.herbs-footer .site-footer__column{grid-column:2;grid-row:1}
+.herbs-footer .site-footer__column:nth-of-type(3){grid-row:2;margin-top:-30px}
+.herbs-footer .site-footer__column b{color:#4d2e1d;font:600 17px/1.5 Arial,sans-serif}
+.herbs-footer .site-footer__column a{color:#4d2e1d;font:14px/1.6 Arial,sans-serif}
+.herbs-footer-offices a{border-color:#80624b}
+.herbs-footer-news{grid-column:3;grid-row:1/3}
+.herbs-footer-news h3{font:600 17px/1.5 Arial,sans-serif;margin:0 0 16px;color:#4d2e1d}
+.herbs-footer-news p{font:14px/1.7 Arial,sans-serif;margin:0 0 24px}
+.herbs-footer-subscribe{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:#fff;border:1px solid #80624b;border-radius:30px;color:#64301b;text-decoration:none;font:14px Arial,sans-serif}
+.herbs-footer .herbs-footer-social{display:flex;flex-direction:row;gap:12px;margin:24px 0 0}
+.herbs-footer-social a{border:1px solid #80624b;border-radius:50%;width:36px;height:36px;align-items:center;justify-content:center}
+.herbs-footer-social svg{width:17px;height:17px}
+.herbs-footer-banner{grid-column:1/-1;margin:20px min(-4.35vw,calc((1280px - 100vw)/2)) 0;min-height:220px;background:linear-gradient(#15391d22,#15391d22),url('/figma-assets/hero-leaves.png') center/cover;display:flex;align-items:center;justify-content:center;padding:30px}
+.herbs-footer-banner>a{color:white;text-decoration:none;font:italic 700 clamp(64px,7vw,120px)/.9 Georgia,serif;text-align:center}
+.herbs-footer-banner span{display:block;font:500 clamp(23px,2.7vw,42px)/1.3 Arial,sans-serif;letter-spacing:.16em}
+.herbs-footer .site-footer__legal{grid-column:1/-1;margin:0;padding:20px 0;background:#faf5ef;border:0;font:12px/1.6 Arial,sans-serif;color:#4d2e1d}
+.herbs-footer .site-footer__legal a{color:inherit}
+@media(max-width:760px){footer.herbs-footer{grid-template-columns:1fr 1fr;padding:35px 24px 0;gap:28px 20px}.herbs-footer .site-footer__brand{grid-column:1/-1;grid-row:1}.herbs-footer .site-footer__column{grid-column:1;grid-row:2}.herbs-footer .site-footer__column:nth-of-type(3){grid-column:2;grid-row:2;margin:0}.herbs-footer-news{grid-column:1/-1;grid-row:3}.herbs-footer-banner{margin:0 -24px;min-height:180px}.herbs-footer .site-footer__legal{padding:18px 0}}
+/* Isolate footer layout from older shared footer positioning and colours. */
+footer.site-footer.herbs-footer{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.75fr) minmax(0,1.1fr)!important;align-items:start;gap:0 7%;padding:60px max(4%,calc((100% - 1280px)/2)) 0!important}
+footer.herbs-footer .site-footer__brand{grid-column:1;grid-row:1;margin:0}
+footer.herbs-footer .site-footer__column{grid-column:2;grid-row:1;display:flex;flex-direction:column;gap:14px;margin:0}
+footer.herbs-footer .site-footer__column b{margin:0 0 4px!important}
+footer.herbs-footer .site-footer__column .herbs-footer-find{margin-top:12px!important}
+footer.herbs-footer .herbs-footer-news{grid-column:3;grid-row:1}
+footer.herbs-footer .herbs-footer-news h3{font:600 17px/1.5 Arial,Helvetica,sans-serif!important;letter-spacing:normal!important;margin:0 0 14px}
+footer.herbs-footer a{color:#4d2e1d}
+footer.herbs-footer .herbs-footer-subscribe{color:#64301b!important;min-height:50px;font:14px/1.4 Arial,sans-serif!important}
+footer.herbs-footer .herbs-footer-subscribe span{display:flex;justify-content:center;align-items:center;width:34px;height:30px;border-radius:20px;background:#64301b;color:white}
+footer.herbs-footer .herbs-footer-social{justify-content:flex-start;align-items:center;margin-top:22px;gap:12px}
+footer.herbs-footer .herbs-footer-banner{grid-column:1/-1;grid-row:2;margin-top:50px;height:230px;min-height:0}
+footer.herbs-footer .herbs-footer-banner a{color:white!important}
+footer.herbs-footer .site-footer__legal{position:static!important;inset:auto!important;transform:none!important;grid-column:1/-1;grid-row:3;display:flex;justify-content:space-between;gap:20px;width:auto!important;max-width:none!important;background:transparent;margin:0!important;padding:22px 0!important;font:12px/1.5 Arial,sans-serif!important}
+footer.herbs-footer .site-footer__legal span{display:block}
+@media(max-width:760px){footer.site-footer.herbs-footer{grid-template-columns:1fr 1fr!important;padding:32px 24px 0!important;gap:30px 20px}footer.herbs-footer .site-footer__brand{grid-column:1/-1;grid-row:1}footer.herbs-footer .site-footer__column{grid-column:1/-1;grid-row:2}footer.herbs-footer .herbs-footer-news{grid-column:1/-1;grid-row:3}footer.herbs-footer .herbs-footer-banner{grid-row:4;margin:0 -24px;height:180px}footer.herbs-footer .site-footer__legal{grid-row:5;flex-wrap:wrap;padding:0 0 20px!important}}
+footer.herbs-footer .herbs-newsletter-form{display:flex;align-items:center;gap:8px;width:100%;padding:5px;background:white;border:1px solid #92725c;border-radius:40px;margin-top:24px}
+.herbs-newsletter-form input{flex:1;min-width:0;width:100%;background:transparent;border:0;padding:12px 16px;color:#4d2e1d;font:14px Arial,sans-serif;outline:none}
+.herbs-newsletter-form:focus-within{outline:2px solid #38623e;outline-offset:2px}
+.herbs-newsletter-form button{display:flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:30px;background:#64301b;color:white;padding:13px 20px;font:600 13px Arial,sans-serif;cursor:pointer;white-space:nowrap}
+.herbs-newsletter-form button:disabled{opacity:.65;cursor:wait}
+.herbs-newsletter-message{margin-top:12px!important;font:13px/1.5 Arial,sans-serif!important}
+@media(max-width:400px){.herbs-newsletter-form button{padding:12px}.herbs-newsletter-form input{padding:10px}}
+footer.herbs-footer .herbs-footer-wordmark{color:white;font:italic 700 clamp(64px,7vw,120px)/.9 Georgia,serif;text-align:center;text-decoration:none;user-select:none;-webkit-user-select:none;pointer-events:none;cursor:default;transition:none;animation:none}
+footer.herbs-footer .site-footer__column{gap:10px}
+footer.herbs-footer .site-footer__column b{margin-bottom:2px!important}
+footer.herbs-footer .site-footer__column .herbs-footer-find{margin-top:8px!important}
+footer.herbs-footer .herbs-footer-news h3{margin-bottom:10px!important}
+footer.herbs-footer .herbs-footer-news p{margin-bottom:14px}
+footer.herbs-footer .herbs-newsletter-form{margin-top:16px}
+footer.herbs-footer .site-footer__column{gap:6px}
+footer.herbs-footer .site-footer__column b{margin-bottom:6px!important}
+footer.herbs-footer .site-footer__column .herbs-footer-find{margin-top:12px!important}
+footer.herbs-footer .herbs-footer-banner .herbs-footer-logo{display:block;width:clamp(220px,28vw,440px);max-width:80%;height:auto;max-height:150px;object-fit:contain;user-select:none;-webkit-user-select:none;pointer-events:none}

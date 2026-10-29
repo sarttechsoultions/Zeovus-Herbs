@@ -398,17 +398,21 @@
     line-height: 1.35
 }
 
-.about-quality-list button img {
+.about-quality-list button .about-quality-toggle {
     position: static;
     width: 24px;
     height: 24px;
     flex: 0 0 24px;
-    object-fit: contain;
-    transition: transform .2s ease
 }
 
-.about-quality-list .is-open button img {
-    transform: rotate(90deg)
+.about-quality-toggle-vertical {
+    transform-origin: center;
+    transition: transform 350ms ease, opacity 350ms ease;
+}
+
+.about-quality-list .is-open .about-quality-toggle-vertical {
+    transform: scaleY(0);
+    opacity: 0;
 }
 
 .about-quality-detail {

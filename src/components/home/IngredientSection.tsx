@@ -13,24 +13,24 @@ interface IngredientItem {
 const featuredIngredient: IngredientItem = {
   id: "botanical-extracts",
   name: "Botanical Extracts",
-  image: "/home-assets/imgIstockphoto19896105631024X10242.png",
+  image: "/home-assets/Botanical.png",
 };
 
 const rightIngredients: IngredientItem[] = [
   {
     id: "collagen-gelatin",
     name: "Collagen, Gelatin & Peptides",
-    image: "/home-assets/imgIstockphoto19896105631024X10241.png",
+    image: "/home-assets/Collagen.png",
   },
   {
     id: "plant-proteins",
     name: "Plant Proteins",
-    image: "/home-assets/img11.png",
+    image: "/home-assets/Plant.png",
   },
   {
     id: "probiotics",
     name: "Prebiotics, Probiotics & Postbiotics",
-    image: "/home-assets/imgPexelsKarolaG40470091.png",
+    image: "/home-assets/Prebiotics.png",
   },
 ];
 
@@ -54,7 +54,6 @@ export function IngredientSection() {
         <div className="built-col-featured">
           <Link href="/products" className="ingredient-card ingredient-card--featured">
             <HomeImage src={featuredIngredient.image} alt={featuredIngredient.name} />
-            <div className="ingredient-card__overlay" />
             <span className="ingredient-pill">
               <IngredientMark />
               <span>{featuredIngredient.name}</span>
@@ -67,7 +66,6 @@ export function IngredientSection() {
           {rightIngredients.map((item) => (
             <Link key={item.id} href="/products" className="ingredient-card ingredient-card--sharp">
               <HomeImage src={item.image} alt={item.name} />
-              <div className="ingredient-card__overlay" />
               <span className="ingredient-pill">
                 <IngredientMark />
                 <span>{item.name}</span>

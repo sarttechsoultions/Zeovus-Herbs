@@ -4,6 +4,7 @@ import JsonLoader from "@/components/JsonLoader";
 import ArrowIcon from "@/components/ArrowIcon";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 type Product = {
   commonName?:string;
@@ -63,12 +64,15 @@ function DetailDropdownCard({
 }
 
 export default function LiveProductDetail({ slug }: { slug: string }) {
-  return <ProductDetail key={slug} slug={slug}/>;
+  const params = useSearchParams();
+  const requestedReturn = params.get("returnTo") || "";
+  const returnTo = requestedReturn === "/products" || requestedReturn.startsWith("/products?") ? requestedReturn : "/products";
+  return <ProductDetail key={slug} slug={slug} returnTo={returnTo}/>;
 }
-function ProductDetail({ slug }: { slug: string }) {
+function ProductDetail({ slug, returnTo }: { slug: string; returnTo: string }) {
   const [product, setProduct] = useState<Product | null>(null);
   const [error, setError] = useState("");
-  const [active, setActive] = useState(0);
+
   const [retry, setRetry] = useState(0);
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   const [openStudies, setOpenStudies] = useState<Record<number, boolean>>({});
@@ -125,29 +129,17 @@ function ProductDetail({ slug }: { slug: string }) {
     );
   }
 
-  const image = product.images[active];
+  const image = product.images[0];
 
   return (
     <div className="detail-body">
-      <Link className="detail-back" href="/products">
+      <Link className="detail-back" href={returnTo}>
         <ArrowIcon direction="left" /> Back to Ingredients
       </Link>
       <div className="detail-layout">
         <aside className="detail-gallery">
           <div className="detail-main-photo">
             {image?.url&&image.url!=="/file.svg"?<img src={image.url} alt={image.alt||product.name}/>:<div className="ingredient-image-pending"><span aria-hidden="true">❧</span><span>{product.name}</span><small>Ingredient image coming soon</small></div>}
-          </div>
-          <div className="detail-thumbnails">
-            {product.images.map((img, i) => img.url!=="/file.svg"&&(
-              <button
-                key={i}
-                onClick={() => setActive(i)}
-                aria-label={"View image " + (i + 1)}
-                aria-pressed={active === i}
-              >
-                <img src={img.url} alt={img.alt} />
-              </button>
-            ))}
           </div>
         </aside>
 

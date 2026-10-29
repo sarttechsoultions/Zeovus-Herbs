@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { SiteImage } from "./SiteImage";
 
 const quality = [
   {
@@ -40,7 +39,7 @@ export function AboutQuality() {
       return <article className={isOpen ? "is-open" : undefined} key={title}>
         <button type="button" aria-expanded={isOpen} aria-controls={`about-quality-detail-${index}`} onClick={() => setActiveIndex(isOpen ? null : index)}>
           <span><strong>{title}</strong><small>{summary}</small></span>
-          <SiteImage src="/about-assets/imgBiArrowUpRightCircle.svg" alt="" />
+          <svg className="about-quality-toggle" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M5 12h14" /><path className="about-quality-toggle-vertical" d="M12 5v14" /></svg>
         </button>
         <div className="about-quality-detail" id={`about-quality-detail-${index}`} aria-hidden={!isOpen}><div className="about-quality-detail-inner"><p>{detail}</p></div></div>
       </article>;

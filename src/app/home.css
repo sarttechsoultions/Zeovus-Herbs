@@ -252,3 +252,22 @@
 @media(max-width:760px){
   .home-page .research-card .research-card__button{width:104px;height:60px;padding:4px 9px 4px 12px}
 }
+.home-page .hero .button{position:absolute;right:4%;bottom:28px;margin:0!important;font-size:clamp(12px,.85vw,16px)!important;padding:12px 20px!important;width:auto!important;gap:10px}.home-page .hero .button img{width:20px;height:20px}
+.home-page .hero{height:clamp(440px,78svh,780px)!important;min-height:0!important;border-radius:0 0 0 9vw!important;-webkit-mask-image:none;mask-image:none;background:#171b17}.home-page .hero .hero-copy{position:absolute;inset:0;display:flex;align-items:center!important;justify-content:center!important;padding:0!important;transform:none!important}.home-page .hero h1{margin:0!important;font-size:clamp(40px,5vw,90px)!important}@media(max-width:760px){.home-page .hero{height:60svh!important;min-height:320px!important}.home-page .hero h1{font-size:clamp(30px,8vw,54px)!important}.home-page .hero .button{bottom:18px;padding:10px 14px!important}}.home-page .leafbg{position:absolute;inset:0;background:transparent}.home-page .leafbg:after{content:none!important;background:none!important}.home-page .leafbg video{object-fit:cover!important;object-position:center bottom!important;filter:none!important}
+.home-page .hero .hero-copy h1{white-space:nowrap;max-width:94%;font-size:clamp(24px,5vw,90px)!important}
+.home-page .hero .hero-copy h1{transform:translateY(-35px)}
+/* Preserve the complete video on narrow screens instead of cropping its captions. */
+@media(max-width:980px){
+ .home-page .hero{height:auto!important;min-height:0!important}
+ .home-page .leafbg video{object-fit:contain!important;object-position:center!important}
+ .home-page .hero .hero-copy h1{font-size:clamp(18px,4.7vw,42px)!important;transform:translateY(-15px)}
+ .home-page .hero .button{bottom:12px;right:3%;font-size:clamp(9px,1.8vw,12px)!important;padding:8px 12px!important;gap:6px}
+ .home-page .hero .button img{width:14px;height:14px}
+}
+@media(max-width:600px){
+ .home-page .hero{overflow:hidden!important;margin-bottom:0}
+ .home-page .hero .leafbg{border-radius:inherit;overflow:hidden}
+ .home-page .hero .button{top:auto;bottom:10px!important;right:3%;height:24px;min-height:24px;padding:5px 8px!important;font-size:8px!important;line-height:1;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+ .home-page .hero .button img{width:14px;height:14px;object-fit:contain}
+}
+@media(max-width:600px){.home-page .hero .button img{width:10px;height:10px}.home-page .hero .button{gap:5px}}

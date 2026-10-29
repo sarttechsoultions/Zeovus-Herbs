@@ -111,10 +111,6 @@ export default function SciencePage() {
                 </a>
               ))}
             </div>
-            <a className="science-button" href="/about">
-              Discover Zeovus Group{" "}
-              <SiteImage src={assets + "imgArrowRight.svg"} alt="" />
-            </a>
           </div>
         </section>
         <section
@@ -162,7 +158,7 @@ export default function SciencePage() {
         </section>
         <section className="science-ingredient-research" id="ingredient-research">
           <SiteImage
-            src={assets + "ingredient-research.png"}
+            src={assets + "sci.jpeg"}
             alt="Industrial ingredient manufacturing facility"
           />
           <div>
