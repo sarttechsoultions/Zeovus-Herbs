@@ -42,7 +42,7 @@ export function AboutQuality() {
           <span><strong>{title}</strong><small>{summary}</small></span>
           <SiteImage src="/about-assets/imgBiArrowUpRightCircle.svg" alt="" />
         </button>
-        <div className="about-quality-detail" id={`about-quality-detail-${index}`} hidden={!isOpen}><p>{detail}</p></div>
+        <div className="about-quality-detail" id={`about-quality-detail-${index}`} aria-hidden={!isOpen}><div className="about-quality-detail-inner"><p>{detail}</p></div></div>
       </article>;
     })}
   </div>;

@@ -412,11 +412,28 @@
 }
 
 .about-quality-detail {
-    padding: 0 48px 18px 16px
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 350ms ease, opacity 350ms ease;
 }
 
-.about-quality-detail[hidden] {
-    display: none
+.about-quality-list .is-open .about-quality-detail {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.about-quality-detail-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.about-quality-detail-inner > p {
+    padding: 0 48px 18px 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-quality-detail { transition: none; }
 }
 
 .about-content .about-quality-detail p {
@@ -655,7 +672,7 @@
 }
 
 /* Align the About page sections with the Figma frame. */
-.about-page .site-header { margin-bottom: 37px; }
+.about-page .site-header { margin-bottom: 0; }
 .about-page .about-excellence { padding-block: 3.07vw; }
 .about-page .about-quality {
     margin-top: 16px;
