@@ -13,7 +13,7 @@ interface IngredientItem {
 const featuredIngredient: IngredientItem = {
   id: "botanical-extracts",
   name: "Botanical Extracts",
-  image: "/home-assets/Botanical.png",
+  image: "/home-assets/Botanical.jpeg",
 };
 
 const rightIngredients: IngredientItem[] = [

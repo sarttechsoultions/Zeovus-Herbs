@@ -1655,8 +1655,8 @@ footer a {
     margin-top: 61px;
     padding: 0 24px;
     white-space: nowrap;
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
     line-height: 1
 }
 
@@ -1670,7 +1670,7 @@ footer a {
 
     .purpose-button {
         max-width: 100%;
-        font-size: 15px;
+        font-size: 14px;
         margin-top: 36px
     }
 }
@@ -1715,7 +1715,7 @@ footer a {
     border-bottom: 1px solid #64301b;
     padding: 0 10px;
     color: #a9a9a9;
-    font: 16px Georgia
+    font: 14px Arial, Helvetica, sans-serif
 }
 
 .site-header__search b {
@@ -2061,7 +2061,7 @@ h1, h2, h3, h4, h5, h6,
 .markets .market-image:hover img { transform: scale(1); }
 .mosaic-card:hover img { transform: scale(1.08); filter: saturate(1.08); }
 .research article:hover img { transform: scale(1.06); }
-.pre-footer:hover .pre-footer__image { transform: scale(1.018); }
+.pre-footer__image:hover { transform: scale(1.018); }
 .advantage .accordion { display: flex; flex-direction: column; gap: 8px; }
 .advantage .accordion button { border: 1px solid #eee4dd; border-bottom: 1px solid #eee4dd; transition: background-color 220ms ease; }
 .advantage .accordion button:hover,
@@ -2233,7 +2233,7 @@ h1, h2, h3, h4, h5, h6,
     .purpose-copy { padding: 5.8vw 5vw !important; }
     .purpose h2, .purpose-title { font-size: 3.35vw !important; }
     .purpose-text, .purpose p { font-size: 1.1vw !important; line-height: 1.55 !important; }
-    .purpose-button { width: 22.8vw !important; height: 3.75vw !important; margin-top: 4.2vw !important; font-size: 1.15vw !important; }
+    .purpose-button { width: 22.8vw !important; height: 3.75vw !important; margin-top: 4.2vw !important; font-size: clamp(12px, .9vw, 14px) !important; }
 
     .markets { gap: 1.7vw; padding-top: 2vw; }
     .markets .market-image { height: min(43svh, 468px); min-height: 0; }
@@ -2318,3 +2318,20 @@ h1, h2, h3, h4, h5, h6,
 @media(max-width:760px){.site-header .site-header__mobile-menu>.site-header__mobile-contact{position:relative;display:flex;align-items:center;justify-content:space-between;margin-top:20px}.site-header__mobile-contact::before{content:"";position:absolute;left:0;right:0;top:-11px;height:1px;background:#e6dcd5}}
 
 .ui-arrow-icon{display:inline-block;vertical-align:middle;flex-shrink:0;width:1.2em;height:1.2em}
+
+/* Shared inner-page image hero height; homepage keeps its own sizing. */
+.about-page .about-hero,
+.science-page .science-hero,
+.contact-page .contact-hero {
+    height: 32vw !important;
+}
+@media (min-width: 761px) and (max-width: 1024px) {
+    .about-page .about-hero,
+    .science-page .science-hero,
+    .contact-page .contact-hero { height: 38.4vw !important; }
+}
+@media (max-width: 760px) {
+    .about-page .about-hero,
+    .science-page .science-hero,
+    .contact-page .contact-hero { height: 52vw !important; }
+}

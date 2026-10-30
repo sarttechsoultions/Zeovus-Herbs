@@ -158,7 +158,7 @@ export default function SciencePage() {
         </section>
         <section className="science-ingredient-research" id="ingredient-research">
           <SiteImage
-            src="/home-assets/pexels-photo-38305217.jpg"
+            src="/science-assets/sci.jpeg"
             alt="Wind turbines above agricultural fields"
           />
           <div>

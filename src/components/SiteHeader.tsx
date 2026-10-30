@@ -119,7 +119,8 @@ export function SiteHeader() {
           aria-label="Zeovus Herbs home"
           onClick={() => setMenuOpen(false)}
         >
-          <HeaderImage src="/logonav.png" alt="Zeovus Herbs" />
+          <HeaderImage src="https://res.cloudinary.com/txvbn2fn/image/upload/v1793341190/zeovus_herbs_recolored.png" alt="Zeovus Herbs" />
+          <span className="site-header__tagline">Plants with purpose</span>
         </Link>
         <IngredientSearch />
         <button

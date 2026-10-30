@@ -686,14 +686,16 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 18.2vw;
-    min-height: 180px;
+    height: 14vw;
+    min-height: 150px;
     padding: 0;
     margin-top: 16px;
     overflow: hidden;
     background: #fff;
 }
 .about-page .about-certifications__track {
+    user-select: none;
+    -webkit-user-select: none;
     display: flex;
     align-items: center;
     width: max-content;
@@ -702,20 +704,21 @@
     will-change: transform;
 }
 .about-page .about-certifications__track>div {
-    width: clamp(180px, 16.667vw, 320px);
+    width: clamp(144px, 13.3336vw, 256px);
     height: clamp(100px, 8vw, 150px);
-    flex: 0 0 clamp(180px, 16.667vw, 320px);
+    flex: 0 0 clamp(144px, 13.3336vw, 256px);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .about-page .about-certifications__track img {
+    cursor: pointer;
+    -webkit-user-drag: none;
     display: block;
     width: 58%;
-    height: 100%;
+    height: 80%;
     object-fit: contain;
 }
-.about-page .about-certifications:hover .about-certifications__track { animation-play-state: paused; }
 @keyframes about-certifications-scroll {
     to { transform: translateX(-50%); }
 }
@@ -732,9 +735,9 @@
         margin-top: 0;
     }
     .about-page .about-certifications__track>div {
-        width: 150px;
+        width: 120px;
         height: 90px;
-        flex-basis: 150px;
+        flex-basis: 120px;
     }
 }
 

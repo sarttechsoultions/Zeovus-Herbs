@@ -108,3 +108,8 @@ header.site-header .site-header__nav .site-header__voices:hover,
 header.site-header .site-header__nav .site-header__voices:focus,
 header.site-header .site-header__voices-mobile,
 header.site-header .site-header__voices-mobile:hover{background:transparent!important;box-shadow:none!important;color:#64301b!important;text-decoration:none!important;transform:none!important}
+header.site-header .site-header__brand{display:flex;align-items:center;text-decoration:none}
+header.site-header .site-header__brand .site-header__tagline{display:flex;align-items:center;min-height:32px;margin-left:18px;padding-left:18px;border-left:1px solid #64301b;color:#64301b;font:400 13px/1.4 Arial,sans-serif;white-space:nowrap}
+@media(max-width:760px){header.site-header .site-header__brand .site-header__tagline{margin-left:10px;padding-left:10px;min-height:28px;font-size:11px}}
+@media(max-width:380px){header.site-header .site-header__brand .site-header__tagline{margin-left:7px;padding-left:7px;font-size:9px}}
+header.site-header .site-header__brand .site-header__tagline{font-weight:600}

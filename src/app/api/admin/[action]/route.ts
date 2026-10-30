@@ -3,7 +3,10 @@ import { backendUrl } from '@/lib/server-config';
 async function proxy(request: NextRequest, context: {params:Promise<{action:string}>}) {
  const {action}=await context.params;
  if(!['login','logout','me','dashboard'].includes(action)) return NextResponse.json({message:'Not found'},{status:404});
- if(request.method==='POST' && request.headers.get('origin') !== request.nextUrl.origin) return NextResponse.json({message:'Origin not allowed'},{status:403});
+ const siteOrigin = process.env.NEXT_PUBLIC_SITE_URL
+   ? new URL(process.env.NEXT_PUBLIC_SITE_URL).origin
+   : request.nextUrl.origin;
+ if(request.method==='POST' && request.headers.get('origin') !== siteOrigin) return NextResponse.json({message:'Origin not allowed'},{status:403});
  try {
  const backend=backendUrl;
  const response=await fetch(`${backend}/api/admin/${action}`,{method:request.method,headers:{'Content-Type':'application/json',cookie:request.headers.get('cookie') || ''},body:request.method==='POST'?await request.text():undefined,cache:'no-store',signal:AbortSignal.timeout(15000)});

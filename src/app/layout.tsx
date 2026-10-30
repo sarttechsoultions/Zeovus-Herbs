@@ -12,7 +12,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className="h-full antialiased">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/vmr2pnz.css" />
-        <link rel="preload" as="video" href="https://assets.mixkit.co/videos/46091/46091-720.mp4" type="video/mp4" />
+        <link rel="preload" as="video" href="https://res.cloudinary.com/txvbn2fn/video/upload/v1793343417/homehero.mp4" type="video/mp4" />
       </head>
       <body className="min-h-full flex flex-col"><SiteImagesProvider>{children}</SiteImagesProvider></body>
     </html>

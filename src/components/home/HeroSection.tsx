@@ -13,19 +13,15 @@ export function HeroSection() {
     video.defaultMuted = true;
     video.muted = true;
     const attemptPlay = () => { void video.play().catch(() => {}); };
-    if (video.readyState >= 2) attemptPlay();
-    else {
-      video.addEventListener("canplay", attemptPlay, { once: true });
-      video.load();
-    }
+    attemptPlay();
+    video.addEventListener("canplay", attemptPlay, { once: true });
     return () => video.removeEventListener("canplay", attemptPlay);
   }, []);
 
   return (
     <section id="home" className="hero" style={{ aspectRatio }}>
       <div className="leafbg">
-        <video onLoadedMetadata={event => { const v = event.currentTarget; if (v.videoWidth && v.videoHeight) setAspectRatio(v.videoWidth+" / "+v.videoHeight); }} ref={videoRef} src="/homehero.mp4" autoPlay muted loop playsInline preload="auto" poster="/figma-assets/hero-leaves.png" aria-label="Green botanical ingredients">
-          <source src="/hero-video.mp4" type="video/mp4" />
+        <video onLoadedMetadata={event => { const v = event.currentTarget; if (v.videoWidth && v.videoHeight) setAspectRatio(v.videoWidth+" / "+v.videoHeight); }} ref={videoRef} src="https://res.cloudinary.com/txvbn2fn/video/upload/v1793343417/homehero.mp4" autoPlay muted loop playsInline preload="auto" poster="/figma-assets/hero-leaves.png" aria-label="Green botanical ingredients">
         </video>
       </div>
       <div className="hero-copy">
